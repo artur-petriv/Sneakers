@@ -88,7 +88,7 @@ html
 body
 	margin: 0
 	font-family: var(--body-font)
-	font-size: 14px
+	font-size: 16px
 	background: var(--body-color)
 	color: var(--text-color)
 
@@ -107,6 +107,9 @@ h1, h2, h3, h4
 	font-weight: var(--font-semi-bold)
 	line-height: var(--line-big)
 
+h3
+	font-size: var(--h3-font-size)
+
 button, input
 	border: none
 	outline: none
@@ -120,10 +123,11 @@ button
 
 // Global CSS classes
 .section
-
-.section__title
-	font-size: var(--h1-font-size)
-	text-align: center
+	padding: var(--space-24) 0 var(--space-8)
+	&__title
+		padding-bottom: var(--space-12)
+		font-size: var(--h1-font-size)
+		text-align: center
 
 .container
 	margin: 0 auto
@@ -132,8 +136,9 @@ button
 .grid
 	&-items-3
 		display: grid
-		grid-template-columns: repeat(3, 1fr)
-		gap: 10rem
+		grid-template-columns: repeat(3, 220px)
+		gap: 8rem
+		justify-content: space-between
 
 .button
 	padding: var(--space-4) var(--space-7)
@@ -295,29 +300,63 @@ button
 // Favorite
 .favorite
 	&__list
+		text-align: center
 		
 	&__item
 		&-img
+			margin-bottom: var(--space-4)
 		&-title
+			margin-bottom: var(--space-2)
 		&-description
 
 // About
 .about
 	&__container
+		display: grid
+		grid-template-columns: repeat(2, 1fr)
+		column-gap: var(--space-15)
+		align-items: center
+		justify-content: space-between
 	&__title
+		text-align: left
 	&__info
 		&-text
+			margin-bottom: var(--space-8)
 	&__image
 	&__img
+		justify-self: flex-end
+		width: 350px
 	
 // Shop
 .shop
 	&__list
+		padding-top: var(--space-2)
+		gap: 6rem
+		text-align: center
+		justify-content: center
 	&__item
+		padding: var(--space-6) var(--space-3)
+		border-radius: 2rem
+		background-color: rgba(0, 0, 0, .3)
 	&__img
+		margin-bottom: var(--space-2)
+		width: 120px
+		height: 120px
+		object-fit: cover
 	&__title
+		// margin-bottom: var(--space-1)
 	&__description
+		// height: 48px
+		// overflow: hidden
+		font-size: var(--small-font-size)
+		display: inline-block
 	&__price
+		margin-top: var(--space-4)
+		color: var(--title-color)
+		font-weight: var(--font-medium)
+		font-size: var(--normal-font-size)
+	&__button
+		margin-top: var(--space-3)
 
 // Sale
 .sale
