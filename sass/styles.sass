@@ -171,7 +171,7 @@ button
 	&__menu
 	&__list
 		display: flex
-		column-gap: var(--space-12)
+		column-gap: var(--space-14)
 		font-size: var(--normal-font-size)
 		align-items: center
 	&__item
@@ -360,31 +360,103 @@ button
 
 // Sale
 .sale
+	&__container
+		padding: var(--space-13) 0
+		display: grid
+		grid-template-columns: repeat(2, 1fr)
+		gap: var(--space-15)
+		align-items: center
+		border-radius: 5rem
+		background-color: rgba(0, 0, 0, .3)
+	&__title
+		margin-bottom: var(--space-8)
+		font-size: var(--h2-font-size)
 	&__image
+		width: 350px
+		justify-self: flex-end
+		display: flex
 	&__img
 	
 	&__info
-		&__title
+		width: 280px
+		text-align: center
 
 // New
 .new
 	&__list
+		display: grid
+		grid-template-columns: repeat(3, 1fr)
+		gap: var(--space-4)
+		text-align: center
 	&__item
+		padding: var(--space-7) 0
+		background-color: rgba(0, 0, 0, .3)
+		border-radius: 1.6rem
+		position: relative
 		&-img
-		&
+			margin-bottom: var(--space-4)
+			width: 150px
+			height: 150px
+			object-fit: cover
+	&__option
+		padding: var(--space-2) var(--space-3)
+		position: absolute
+		top: 2.4rem
+		left: 2.4rem
+		background-color: var(--first-color)
+		line-height: var(--line-base)
+		border-radius: .5rem
+		font-size: var(--small-font-size)
 	&__title
 	&__description
+		font-size: var(--small-font-size)
 	&__prices
+		margin-top: var(--space-4)
+		margin-bottom: var(--space-6)
+		display: flex
+		align-items: flex-start
+		justify-content: center
+		line-height: var(--line-base)
 	&__price
 		&-new
+			font-weight: var(--font-medium)
+			color: var(--title-color)
 		&-old
+			margin-left: var(--space-2)
+			color: var(--first-color)
+			font-size: var(--smaller-font-size)
+			text-decoration: line-through
 
 // Action
 .action
+	&__container
+		display: flex
+		flex-direction: column
+		align-items: center
+		justify-content: center
 	&__title
 	&__subtitle
+		padding: 0 var(--space-3)
+		margin-bottom: var(--space-3)
+		text-align: center
 	&__form
+		padding: var(--space-7) var(--space-8)
+		width: 420px
+		display: flex
+		flex-direction: column
+		align-items: center
+		border-radius: 1rem
+		background-color: rgba(0, 0, 0, .3)
 	&__input
+		padding: var(--space-4) var(--space-5)
+		margin-top: var(--space-3)
+		width: 100%
+		border-radius: .4rem
+		&:first-child
+			margin-top: 0
+	&__button
+		margin-top: var(--space-5)
+		width: 100%
 
 // Footer
 .footer

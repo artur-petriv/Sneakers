@@ -184,8 +184,8 @@ button {
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
-  -webkit-column-gap: var(--space-12);
-          column-gap: var(--space-12);
+  -webkit-column-gap: var(--space-14);
+          column-gap: var(--space-14);
   font-size: var(--normal-font-size);
   -webkit-box-align: center;
   -webkit-align-items: center;
@@ -462,4 +462,169 @@ button {
 
 .shop__button {
   margin-top: var(--space-3);
+}
+
+.sale__container {
+  padding: var(--space-13) 0;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: (1fr)[2];
+      grid-template-columns: repeat(2, 1fr);
+  gap: var(--space-15);
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
+  border-radius: 5rem;
+  background-color: rgba(0, 0, 0, 0.3);
+}
+
+.sale__title {
+  margin-bottom: var(--space-8);
+  font-size: var(--h2-font-size);
+}
+
+.sale__image {
+  width: 350px;
+  justify-self: flex-end;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.sale__info {
+  width: 280px;
+  text-align: center;
+}
+
+.new__list {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: (1fr)[3];
+      grid-template-columns: repeat(3, 1fr);
+  gap: var(--space-4);
+  text-align: center;
+}
+
+.new__item {
+  padding: var(--space-7) 0;
+  background-color: rgba(0, 0, 0, 0.3);
+  border-radius: 1.6rem;
+  position: relative;
+}
+
+.new__item-img {
+  margin-bottom: var(--space-4);
+  width: 150px;
+  height: 150px;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
+.new__option {
+  padding: var(--space-2) var(--space-3);
+  position: absolute;
+  top: 2.4rem;
+  left: 2.4rem;
+  background-color: var(--first-color);
+  line-height: var(--line-base);
+  border-radius: .5rem;
+  font-size: var(--small-font-size);
+}
+
+.new__description {
+  font-size: var(--small-font-size);
+}
+
+.new__prices {
+  margin-top: var(--space-4);
+  margin-bottom: var(--space-6);
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: start;
+  -webkit-align-items: flex-start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  line-height: var(--line-base);
+}
+
+.new__price-new {
+  font-weight: var(--font-medium);
+  color: var(--title-color);
+}
+
+.new__price-old {
+  margin-left: var(--space-2);
+  color: var(--first-color);
+  font-size: var(--smaller-font-size);
+  text-decoration: line-through;
+}
+
+.action__container {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -webkit-flex-direction: column;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.action__subtitle {
+  padding: 0 var(--space-3);
+  margin-bottom: var(--space-3);
+  text-align: center;
+}
+
+.action__form {
+  padding: var(--space-7) var(--space-8);
+  width: 420px;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -webkit-flex-direction: column;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
+  border-radius: 1rem;
+  background-color: rgba(0, 0, 0, 0.3);
+}
+
+.action__input {
+  padding: var(--space-4) var(--space-5);
+  margin-top: var(--space-3);
+  width: 100%;
+  border-radius: .4rem;
+}
+
+.action__input:first-child {
+  margin-top: 0;
+}
+
+.action__button {
+  margin-top: var(--space-5);
+  width: 100%;
 }
