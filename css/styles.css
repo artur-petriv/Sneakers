@@ -316,6 +316,19 @@ button {
           column-gap: var(--space-10);
 }
 
+.home__stock {
+  margin-bottom: var(--space-3);
+  background-color: rgba(35, 120, 40, 0.5);
+  color: #25d432;
+  padding: 4px 8px;
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  border-radius: 4px;
+  font-size: var(--small-font-size);
+}
+
 .home__image {
   -webkit-box-flex: 1;
   -webkit-flex: 1 0;
@@ -532,7 +545,6 @@ button {
 
 .shop__list {
   padding-top: var(--space-2);
-  gap: 6rem;
   text-align: center;
   -webkit-box-pack: center;
   -webkit-justify-content: center;
@@ -548,8 +560,6 @@ button {
 
 .shop__img {
   margin-bottom: var(--space-2);
-  width: 120px;
-  height: 120px;
   -o-object-fit: cover;
      object-fit: cover;
 }
