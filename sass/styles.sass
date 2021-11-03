@@ -178,7 +178,7 @@ button
 	&-items-3
 		display: grid
 		grid-template-columns: repeat(3, 1fr)
-		gap: var(--space-15)
+		gap: var(--space-4)
 		justify-content: space-between
 
 .button
@@ -211,7 +211,17 @@ button
 		font-weight: var(--font-normal)
 
 
+.bg
+	&_black
+		background-color: rgba(0, 0, 0, .3)
+
 .product
+	&__item
+		padding: var(--space-7)
+		border-radius: 1.2rem
+		display: flex
+		flex-direction: column
+		align-items: flex-start
 	&__stock
 		padding: var(--space-1) var(--space-2)
 		font-size: var(--smaller-font-size)
@@ -254,9 +264,9 @@ button
 			display: flex
 			align-items: center
 			justify-content: flex-start
-			flex: row wrap
+			flex-flow: row wrap
+			gap: var(--space-2)
 		&-size
-			margin-right: var(--space-2)
 			padding: var(--space-1) var(--space-2)
 			background-color: rgba(0,0,0,.3)
 			border-radius: .4rem
@@ -285,6 +295,7 @@ button
 			// 	// transform: translate(-50%, -50%)
 			// 	box-sizing: border-box
 	&__buttons
+		width: 100%
 		display: flex
 		align-items: center
 		justify-content: space-between

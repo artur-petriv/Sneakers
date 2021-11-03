@@ -174,7 +174,7 @@ button {
   display: grid;
   -ms-grid-columns: (1fr)[3];
       grid-template-columns: repeat(3, 1fr);
-  gap: var(--space-15);
+  gap: var(--space-4);
   -webkit-box-pack: justify;
   -webkit-justify-content: space-between;
       -ms-flex-pack: justify;
@@ -225,6 +225,28 @@ button {
   color: var(--first-color);
   line-height: var(--line-base);
   font-weight: var(--font-normal);
+}
+
+.bg_black {
+  background-color: rgba(0, 0, 0, 0.3);
+}
+
+.product__item {
+  padding: var(--space-7);
+  border-radius: 1.2rem;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -webkit-flex-direction: column;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: start;
+  -webkit-align-items: flex-start;
+      -ms-flex-align: start;
+          align-items: flex-start;
 }
 
 .product__stock {
@@ -303,14 +325,15 @@ button {
   -webkit-justify-content: flex-start;
       -ms-flex-pack: start;
           justify-content: flex-start;
-  -webkit-box-flex: row;
-  -webkit-flex: row wrap;
-      -ms-flex: row wrap;
-          flex: row wrap;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+  -webkit-flex-flow: row wrap;
+      -ms-flex-flow: row wrap;
+          flex-flow: row wrap;
+  gap: var(--space-2);
 }
 
 .product__option-size {
-  margin-right: var(--space-2);
   padding: var(--space-1) var(--space-2);
   background-color: rgba(0, 0, 0, 0.3);
   border-radius: .4rem;
@@ -338,6 +361,7 @@ button {
 }
 
 .product__buttons {
+  width: 100%;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
