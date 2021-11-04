@@ -31,10 +31,10 @@
 
 			<div class="nav__menu">
 				<ul class="nav__list">
-					<li class="nav__item"><a href="#" class="nav__link">Home</a></li>
-					<li class="nav__item"><a href="#" class="nav__link">About</a></li>
+					<li class="nav__item"><a href="#" class="nav__link nav__link_active">Home</a></li>
+					<li class="nav__item"><a href="#" class="nav__link">Trends</a></li>
 					<li class="nav__item"><a href="#" class="nav__link">Shop</a></li>
-					<li class="nav__item"><a href="#" class="nav__link">New</a></li>
+					<li class="nav__item"><a href="#" class="nav__link">Shipping</a></li>
 					<a href="#" class="nav__button button">Support</a>
 				</ul>
 			</div>
@@ -97,7 +97,7 @@
 									<div class="product__option-title">Size:</div>
 									<div class="product__option-sizes">
 										<div class="product__option-size">39</div>
-										<div class="product__option-size">40</div>
+										<div class="product__option-size product__option_unavailable">40</div>
 										<div class="product__option-size">41</div>
 										<div class="product__option-size product__option_selected">42</div>
 										<div class="product__option-size">43</div>
@@ -113,7 +113,7 @@
 							</div>
 
 							<div class="product__buttons">
-								<button class="button">Buy now</button>
+								<button class="button">Buy Now</button>
 								<a href="#" class="button_link">
 									View Details
 									<span class="material-icons home__icon">arrow_forward</span>
@@ -148,7 +148,7 @@
 							</div>
 
 							<div class="product__buttons">
-								<button class="button">Buy now</button>
+								<button class="button">Buy Now</button>
 								<a href="#" class="button_link">
 									View Details
 									<span class="material-icons home__icon">arrow_forward</span>
@@ -183,7 +183,7 @@
 							</div>
 
 							<div class="product__buttons">
-								<button class="button">Buy now</button>
+								<button class="button">Buy Now</button>
 								<a href="#" class="button_link">
 									View Details
 									<span class="material-icons home__icon">arrow_forward</span>
@@ -207,7 +207,7 @@
 						</div>
 					</div>
 					
-					<a href="#" class="about__button button">Know more</a>
+					<a href="#" class="about__button button">Read More</a>
 				</div>
 			</section>
 	
@@ -243,7 +243,7 @@
 							</div>
 
 							<div class="product__buttons">
-								<button class="button">Buy now</button>
+								<button class="button">Buy Now</button>
 								<a href="#" class="button_link">
 									View Details
 									<span class="material-icons home__icon">arrow_forward</span>
@@ -278,7 +278,7 @@
 							</div>
 
 							<div class="product__buttons">
-								<button class="button">Buy now</button>
+								<button class="button">Buy Now</button>
 								<a href="#" class="button_link">
 									View Details
 									<span class="material-icons home__icon">arrow_forward</span>
@@ -313,7 +313,7 @@
 							</div>
 
 							<div class="product__buttons">
-								<button class="button">Buy now</button>
+								<button class="button">Buy Now</button>
 								<a href="#" class="button_link">
 									View Details
 									<span class="material-icons home__icon">arrow_forward</span>
@@ -348,7 +348,7 @@
 							</div>
 
 							<div class="product__buttons">
-								<button class="button">Buy now</button>
+								<button class="button">Buy Now</button>
 								<a href="#" class="button_link">
 									View Details
 									<span class="material-icons home__icon">arrow_forward</span>
@@ -383,7 +383,7 @@
 							</div>
 
 							<div class="product__buttons">
-								<button class="button">Buy now</button>
+								<button class="button">Buy Now</button>
 								<a href="#" class="button_link">
 									View Details
 									<span class="material-icons home__icon">arrow_forward</span>
@@ -418,7 +418,7 @@
 							</div>
 
 							<div class="product__buttons">
-								<button class="button">Buy now</button>
+								<button class="button">Buy Now</button>
 								<a href="#" class="button_link">
 									View Details
 									<span class="material-icons home__icon">arrow_forward</span>
@@ -467,14 +467,41 @@
 	
 			<section class="action section">
 				<div class="action__container container">
-					<h2 class="section__title">Contact us</h2>
+					<h2 class="section__title">Contacts</h2>
+
+					<div class="action__wrap">
+						<form class="action__form" action="order.php" method="post">
+							<span class="action__subtitle">Just enter your name and mobile number and we’ll do the rest</span>
+							<input class="action__input" type="text" name="name" required value="" placeholder="Enter your name">
+							<input class="action__input" type="tel" name="phone" required value="" placeholder="Enter your phone">
+							<button type="submit" class="action__button button">Send</button>
+						</form>
+
+						<div class="action__socials">
+							<span class="action__socials-title">Social:</span>
+							<ul class="action__list">
+								<li class="action__social">
+									<a href="#" class="action__link">
+										<i class="bx bx-md bxl-facebook"></i>
+									</a>
+								</li>
+
+								<li class="action__social">
+									<a href="#" class="action__link">
+										<i class="bx bx-md bxl-instagram-alt"></i>
+									</a>
+								</li>
+
+								<li class="action__social">
+									<a href="#" class="action__link">
+										<i class="bx bx-md bxl-twitter"></i>
+									</a>
+								</li>
+
+							</ul>
+						</div>
+					</div>
 					
-					<form class="action__form" action="order.php" method="post">
-						<span class="action__subtitle">Just enter your name and mobile number and we’ll do the rest</span>
-						<input class="action__input" type="text" name="name" required value="" placeholder="Enter your name">
-						<input class="action__input" type="tel" name="phone" required value="" placeholder="Enter your phone">
-						<button type="submit" class="action__button button">Send</button>
-					</form>
 				</div>
 			</section>
 		</div>
@@ -485,12 +512,12 @@
 		<div class="footer__container container">
 			<div class="footer__group">
 				<a href="#" class="logo">
-					<img src="img/logo.png" alt="" class="logo__img">
+					<img src="img/logo.svg" alt="" class="logo__img">
 					Sneakers
 				</a>
 
 				<div class="footer__description">
-					Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+					Top brands sneakers store.
 				</div>
 
 				<div class="footer__socials">
@@ -513,52 +540,52 @@
 
 				<ul class="footer__list">
 					<li class="footer__item">
-						<a href="#" class="footer__link">About Us</a>
+						<a href="#" class="footer__link">Contact us</a>
 					</li>
 
 					<li class="footer__item">
-						<a href="#" class="footer__link">Features</a>
+						<a href="#" class="footer__link">Store</a>
 					</li>
 
 					<li class="footer__item">
-						<a href="#" class="footer__link">News</a>
-					</li>
-				</ul>
-			</div>
-
-			<div class="footer__group">
-				<h4 class="footer__title">Our Services</h4>
-
-				<ul class="footer__list">
-					<li class="footer__item">
-						<a href="#" class="footer__link">Pricing</a>
-					</li>
-
-					<li class="footer__item">
-						<a href="#" class="footer__link">Discounts</a>
-					</li>
-
-					<li class="footer__item">
-						<a href="#" class="footer__link">Shipping mode</a>
+						<a href="#" class="footer__link">Privacy</a>
 					</li>
 				</ul>
 			</div>
 
 			<div class="footer__group">
-				<h4 class="footer__title">Our Company</h4>
+				<h4 class="footer__title">Services</h4>
 
 				<ul class="footer__list">
 					<li class="footer__item">
-						<a href="#" class="footer__link">Blog</a>
+						<a href="#" class="footer__link">Delivery</a>
 					</li>
 
 					<li class="footer__item">
-						<a href="#" class="footer__link">About us</a>
+						<a href="#" class="footer__link">Returns</a>
 					</li>
 
 					<li class="footer__item">
+						<a href="#" class="footer__link">Shipping</a>
+					</li>
+				</ul>
+			</div>
+
+			<div class="footer__group">
+				<h4 class="footer__title">Info</h4>
+
+				<ul class="footer__list">
+					<li class="footer__item">
+						<a href="#" class="footer__link">Orders</a>
+					</li>
+
+					<li class="footer__item">
+						<a href="#" class="footer__link">FAQ</a>
+					</li>
+
+					<!-- <li class="footer__item">
 						<a href="#" class="footer__link">Our mision</a>
-					</li>
+					</li> -->
 				</ul>
 			</div>
 		</div>

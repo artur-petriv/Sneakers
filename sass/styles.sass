@@ -12,6 +12,7 @@
 	--title-color: hsl(var(--hue) 3% 100%)
 	--text-color: hsl(var(--hue) 3% 85%)
 	--text-color-light: hsl(var(--hue) 3% 60%)
+	--hover-color: #f2f2a6
 
 	--body-color: linear-gradient(105deg, hsl(275deg 50% 35%) 0%, hsl(212deg 50% 50%) 100%)
 
@@ -199,6 +200,9 @@ button
 		column-gap: var(--space-2)
 		color: var(--title-color)
 		font-size: var(--small-font-size)
+		transition: .3s
+		&:hover
+			color: hsl(60, 75%, 80%)
 
 .price
 	color: var(--title-color)
@@ -275,25 +279,18 @@ button
 			display: flex
 			justify-content: center
 			align-items: center
+			cursor: pointer
 		&_selected
 			background-color: white
-			// border: 2px solid var(--first-color)
 			color: #333
 			position: relative
 			font-weight: var(--font-medium)
-			// &::after
-			// 	content: ''
-			// 	width: calc(100% + 6px)
-			// 	height: calc(100% + 6px)
-			// 	position: absolute
-			// 	top: -3px
-			// 	left: -3px
-			// 	right: -3px
-			// 	bottom: -3px
-			// 	border: 1px solid var(--first-color)
-			// 	border-radius: 8px
-			// 	// transform: translate(-50%, -50%)
-			// 	box-sizing: border-box
+			cursor: default
+		&_unavailable
+			opacity: 0.4
+			text-decoration: line-through
+			cursor: default
+		
 	&__buttons
 		width: 100%
 		display: flex
@@ -321,18 +318,35 @@ button
 		align-items: center
 		cursor: pointer
 		font-size: var(--normal-font-size)
+		transition: .3s
+		&:hover
+			color: var(--hover-color)
 		&_selected
 			background-color: #fff
 			color: #333
 			font-weight: var(--font-medium)
 			cursor: default
+			&:hover
+				color: initial
+
+		&_unavailable
+				// color: var(--text-color)
 		&_plug
 			cursor: default
+			&:hover
+				color: inherit
 // Other styles
 
 
 // Header
 .header
+	width: 100%
+	position: fixed
+	top: 0
+	left: 0
+	z-index: 100
+	&_scroll
+		background-color: #29264e
 
 .nav
 	height: var(--header-height)
@@ -342,12 +356,28 @@ button
 	&__menu
 	&__list
 		display: flex
-		column-gap: var(--space-14)
+		column-gap: var(--space-12)
 		font-size: var(--normal-font-size)
 		align-items: center
 	&__item
 	&__link
 		color: var(--title-color)
+		transition: .3s
+		position: relative
+		&:hover
+			color: hsl(60, 75%, 80%)
+		&_active
+			&::after
+				content: ''
+				width: 100%
+				height: 2px
+				background-color: var(--first-color-alt)
+				position: absolute
+				bottom: -8px
+				left: 0
+			&:hover
+				color: var(--title-color)
+		
 	&__button
 		padding: var(--space-3) var(--space-6)
 		color: var(--title-color)
@@ -355,7 +385,10 @@ button
 		display: inline-flex
 		border: 2px solid var(--title-color)
 		border-radius: 30px
+		transition: .3s
 		&:hover
+			color: hsl(60, 75%, 80%)
+			border-color: hsl(60, 75%, 80%)
 			background-color: transparent
 
 .logo
@@ -515,6 +548,7 @@ button
 	&__title
 		text-align: left
 		padding-bottom: var(--space-1)
+		font-size: 2.4rem
 	&__group
 		display: flex
 		flex-direction: column
@@ -639,16 +673,42 @@ button
 	&__container
 		display: flex
 		flex-direction: column
+		align-items: space-between
+		justify-content: flex-start
+	&__title
+	&__wrap
+		display: grid
+		grid-template-columns: repeat(2, 1fr)
+		gap: var(--space-8)
+	&__socials
+		padding: var(--space-7)
+		background-color: rgba(0, 0, 0, .3)
+		border-radius: 12px
+		align-self: flex-start
+		&-title
+	&__list
+		margin-top: var(--space-3)
+		display: flex
+		gap: var(--space-2)
+	&__social
+		display: flex
+	&__link
+		padding: var(--space-2) var(--space-2)
+		background-color: rgba(0, 0, 0, .3)
+		border-radius: .4rem
+		color: var(--title-color)
+		display: inline-flex
 		align-items: center
 		justify-content: center
-	&__title
+		color: var(--text-color)
+		transition: .3s
+		&:hover
+			color: var(--title-color)
 	&__subtitle
-		padding: 0 var(--space-3)
 		margin-bottom: var(--space-3)
-		text-align: center
+		text-align: left
 	&__form
-		padding: var(--space-7) var(--space-8)
-		width: 420px
+		padding: var(--space-7)
 		display: flex
 		flex-direction: column
 		align-items: center
@@ -691,6 +751,10 @@ button
 		display: inline-flex
 		align-items: center
 		justify-content: center
+		color: var(--text-color)
+		transition: .3s
+		&:hover
+			color: var(--title-color)
 	&__item
 		margin-bottom: var(--space-1)
 		&:last-child
@@ -698,7 +762,7 @@ button
 	&__link
 		font-size: var(--small-font-size)
 		color: var(--text-color)
-		transition: color .2s
+		transition: .3s
 		&:hover
 			color: var(--title-color)
 	&__copyright
@@ -717,8 +781,11 @@ button
 	background-color: rgba(0,0,0,.3)
 	border-radius: .4rem
 	display: inline-flex
-	color: var(--title-color)
+	color: var(--text-color)
 	line-height: var(--line-base)
+	transition: .3s
+	&:hover
+		color: var(--title-color)
 	&__icon
 		font-size: 2.4rem
 		font-weight: var(--font-medium)
