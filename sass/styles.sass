@@ -564,28 +564,30 @@ button
 		margin-top: var(--space-3)
 
 // Sale
-.sale
+.info
 	&__container
-		padding: var(--space-13) 0
 		display: grid
 		grid-template-columns: repeat(2, 1fr)
-		gap: var(--space-15)
-		align-items: center
-		border-radius: 5rem
+		gap: var(--space-8)
+	&__wrap
+		padding: var(--space-7)
 		background-color: rgba(0, 0, 0, .3)
+		border-radius: 12px
 	&__title
-		margin-bottom: var(--space-8)
 		font-size: var(--h2-font-size)
+		line-height: var(--line-base)
+	&__p
+		margin-top: var(--space-2)
+	&__button
+		margin-top: var(--space-8)
 	&__image
-		width: 350px
-		justify-self: flex-end
+		margin-bottom: var(--space-4)
+		width: 120px
+		height: 120px
+		// justify-self: flex-end
 		display: flex
 	&__img
-	
-	&__info
-		width: 280px
-		text-align: center
-
+		object-fit: contain
 // New
 .new
 	&__list

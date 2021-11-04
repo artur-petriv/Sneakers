@@ -815,38 +815,46 @@ button {
   margin-top: var(--space-3);
 }
 
-.sale__container {
-  padding: var(--space-13) 0;
+.info__container {
   display: -ms-grid;
   display: grid;
   -ms-grid-columns: (1fr)[2];
       grid-template-columns: repeat(2, 1fr);
-  gap: var(--space-15);
-  -webkit-box-align: center;
-  -webkit-align-items: center;
-      -ms-flex-align: center;
-          align-items: center;
-  border-radius: 5rem;
+  gap: var(--space-8);
+}
+
+.info__wrap {
+  padding: var(--space-7);
   background-color: rgba(0, 0, 0, 0.3);
+  border-radius: 12px;
 }
 
-.sale__title {
-  margin-bottom: var(--space-8);
+.info__title {
   font-size: var(--h2-font-size);
+  line-height: var(--line-base);
 }
 
-.sale__image {
-  width: 350px;
-  justify-self: flex-end;
+.info__p {
+  margin-top: var(--space-2);
+}
+
+.info__button {
+  margin-top: var(--space-8);
+}
+
+.info__image {
+  margin-bottom: var(--space-4);
+  width: 120px;
+  height: 120px;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
 }
 
-.sale__info {
-  width: 280px;
-  text-align: center;
+.info__img {
+  -o-object-fit: contain;
+     object-fit: contain;
 }
 
 .new__list {
