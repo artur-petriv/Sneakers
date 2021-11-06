@@ -390,8 +390,12 @@ button
 	top: 0
 	left: 0
 	z-index: 100
+	transition: .3s
+	background-color: transparent
 	&_scroll
 		background-color: #29264e
+	&_hide
+		transform: translateY(-100%)
 
 .nav
 	height: var(--header-height)
