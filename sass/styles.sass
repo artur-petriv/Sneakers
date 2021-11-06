@@ -226,6 +226,13 @@ button
 		display: flex
 		flex-direction: column
 		align-items: flex-start
+		&-img
+			object-fit: contain
+			display: block
+			transition: .3s
+			transform: scale(1)
+			&:hover
+				transform: scale(1.1)
 	&__stock
 		margin-bottom: var(--space-4)
 		padding: var(--space-1) var(--space-2)
@@ -234,7 +241,6 @@ button
 		color: #25d432
 		display: inline-flex
 		border-radius: .4rem
-		// font-size: var(--small-font-size)
 	&__title
 		font-size: var(--h3-font-size)
 		color: var(--title-color)
@@ -338,6 +344,45 @@ button
 // Other styles
 
 
+// Swiper
+.swiper
+	&-pagination
+		position: initial
+		&-bullet
+			height: 12px
+			width: 12px
+			background-color: var(--title-color)
+			opacity: 0.25
+			&-active
+				opacity: 1
+	&-icon
+		font-size: 3rem
+
+.swiper-button-next, .swiper-button-prev
+	padding: 4px
+	background-color: rgba(0, 0, 0, .3)
+	border-radius: 4px
+	display: flex
+	justify-content: center
+	align-items: center
+	width: auto
+	height: auto
+	color: rgba(255, 255, 255, .6)
+	transition: .3s
+	&:hover
+		color: rgba(255, 255, 255, 1)
+		background-color: rgba(0, 0, 0, .4)
+
+.swiper-button-next:after, .swiper-button-prev:after
+	content: ''
+
+.swiper-button-prev
+	left: -80px
+
+.swiper-button-next
+	right: -80px
+
+
 // Header
 .header
 	width: 100%
@@ -410,7 +455,8 @@ button
 
 // Home
 .home
-	padding: var(--space-12) 0
+	padding: calc(var(--space-12) + 80px) 0 var(--space-12)
+	position: relative
 	&__box
 		display: flex
 		align-items: center
@@ -527,13 +573,10 @@ button
 // Favorite
 .favorite
 	&__list
-		// text-align: center
-		
+		position: relative
 	&__item
 		&-img
 			margin-bottom: var(--space-3)
-			display: block
-			object-fit: contain
 		&-title
 			margin-bottom: var(--space-3)
 		&-description
