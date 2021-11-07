@@ -143,19 +143,18 @@
 
 
 .pagination
-	margin-top: var(--space-8)
+	margin-top: var(--space-7)
 	display: flex
 	align-items: center
 	justify-content: center
 	gap: var(--space-2)
 	&__arrow
+		margin: 0 var(--space-2)
+	&__button
 		padding: var(--space-1) var(--space-2)
-		border-radius: var(--border-radius-large)
-	&__number
 		min-width: 34px
 		min-height: 34px
-		border-radius: var(--border-radius-large)
-		padding: var(--space-1) var(--space-2)
+		border-radius: var(--border-radius-small)
 		background-color: var(--background-dark)
 		display: flex
 		justify-content: center
@@ -176,6 +175,28 @@
 			cursor: default
 			&:hover
 				color: inherit
+
+.socials
+	background-color: var(--background-dark)
+	border-radius: var(--border-radius-large)
+	align-self: flex-start
+	&__list
+		display: flex
+		gap: var(--space-2)
+	&__social
+		display: flex
+	&__link
+		padding: var(--space-2) var(--space-2)
+		background-color: var(--background-dark)
+		border-radius: var(--border-radius-small)
+		color: var(--primary-color)
+		display: inline-flex
+		align-items: center
+		justify-content: center
+		color: var(--text-color)
+		transition: .3s
+		&:hover
+			color: var(--primary-color)
 
 
 // Swiper
@@ -355,7 +376,7 @@
 	&__buttons
 		margin-top: var(--space-6)
 
-	
+
 // Shipping
 .shipping
 	&__container
@@ -388,38 +409,34 @@
 // Shop
 .shop
 	&__list
-		padding-top: var(--space-2)
-		text-align: center
 		justify-content: center
 	&__item
-		// padding: var(--space-6) var(--space-3)
-		// background-color: var(--background-dark)
+		&-title
+			margin-bottom: var(--space-3)
+		&-img
+			margin-bottom: var(--space-4)
 	&__img
 		margin-bottom: var(--space-2)
-		// width: 120px
-		// height: 120px
 		object-fit: cover
-	&__title
-		// margin-bottom: var(--space-1)
-	&__description
-		// height: 48px
-		// overflow: hidden
-		font-size: var(--small-font-size)
-		display: inline-block
+	&__options
+		margin-top: var(--space-4)
+	&__prices
+		margin-top: var(--space-6)
 	&__price
 		margin-top: var(--space-4)
 		color: var(--primary-color)
 		font-weight: var(--font-medium)
 		font-size: var(--normal-font-size)
-	&__button
-		margin-top: var(--space-3)
+	&__buttons
+		margin-top: var(--space-7)
+
 
 // Sale
 .info
 	&__container
 		display: grid
 		grid-template-columns: repeat(2, 1fr)
-		gap: var(--space-8)
+		gap: var(--space-7)
 	&__wrap
 		padding: var(--space-7)
 		background-color: var(--background-dark)
@@ -435,59 +452,13 @@
 		margin-bottom: var(--space-4)
 		width: 120px
 		height: 120px
-		// justify-self: flex-end
-		display: flex
 	&__img
+		display: block
 		object-fit: contain
 
-// New
-// .new
-// 	&__list
-// 		display: grid
-// 		grid-template-columns: repeat(3, 1fr)
-// 		gap: var(--space-4)
-// 		text-align: center
-// 	&__item
-// 		padding: var(--space-7) 0
-// 		background-color: var(--background-dark)
-// 		border-radius: 1.6rem
-// 		position: relative
-// 		&-img
-// 			margin-bottom: var(--space-4)
-// 			width: 150px
-// 			height: 150px
-// 			object-fit: cover
-// 	&__option
-// 		padding: var(--space-2) var(--space-3)
-// 		position: absolute
-// 		top: 2.4rem
-// 		left: 2.4rem
-// 		background-color: var(--brand-color)
-// 		line-height: var(--line-base)
-// 		border-radius: .5rem
-// 		font-size: var(--small-font-size)
-// 	&__title
-// 	&__description
-// 		font-size: var(--small-font-size)
-// 	&__prices
-// 		margin-top: var(--space-4)
-// 		margin-bottom: var(--space-6)
-// 		display: flex
-// 		align-items: flex-start
-// 		justify-content: center
-// 		line-height: var(--line-base)
-// 	&__price
-// 		&-new
-// 			font-weight: var(--font-medium)
-// 			color: var(--primary-color)
-// 		&-old
-// 			margin-left: var(--space-2)
-// 			color: var(--brand-color)
-// 			font-size: var(--smaller-font-size)
-// 			text-decoration: line-through
 
 // Action
-.action
+.contacts
 	&__container
 		display: flex
 		flex-direction: column
@@ -500,28 +471,8 @@
 		gap: var(--space-8)
 	&__socials
 		padding: var(--space-7)
-		background-color: var(--background-dark)
-		border-radius: var(--border-radius-large)
-		align-self: flex-start
-		&-title
 	&__list
 		margin-top: var(--space-3)
-		display: flex
-		gap: var(--space-2)
-	&__social
-		display: flex
-	&__link
-		padding: var(--space-2) var(--space-2)
-		background-color: var(--background-dark)
-		border-radius: var(--border-radius-small)
-		color: var(--primary-color)
-		display: inline-flex
-		align-items: center
-		justify-content: center
-		color: var(--text-color)
-		transition: .3s
-		&:hover
-			color: var(--primary-color)
 	&__subtitle
 		margin-bottom: var(--space-3)
 		text-align: left
@@ -533,14 +484,14 @@
 		border-radius: var(--border-radius-large)
 		background-color: var(--background-dark)
 	&__input
+		margin-bottom: var(--space-4)
 		padding: var(--space-4) var(--space-5)
-		margin-top: var(--space-3)
 		width: 100%
 		border-radius: var(--border-radius-small)
-		&:first-child
-			margin-top: 0
+		&:last-child
+			margin-bottom: 0
 	&__button
-		margin-top: var(--space-5)
+		margin-top: var(--space-2)
 		width: 100%
 
 // Footer
@@ -561,19 +512,6 @@
 		margin-top: var(--space-4)
 	&__socials
 		margin-top: var(--space-11)
-	&__social
-		margin-right: var(--space-1)
-		padding: var(--space-1)
-		background-color: var(--background-dark)
-		border-radius: var(--border-radius-small)
-		color: var(--primary-color)
-		display: inline-flex
-		align-items: center
-		justify-content: center
-		color: var(--text-color)
-		transition: .3s
-		&:hover
-			color: var(--primary-color)
 	&__item
 		margin-bottom: var(--space-1)
 		&:last-child
@@ -590,13 +528,12 @@
 		font-size: var(--small-font-size)
 
 
-
 // Scroll Up
 .scrollup
 	padding: var(--space-1)
 	position: fixed
-	bottom: 4%
-	right: 3%
+	bottom: 40px
+	right: 32px
 	background-color: var(--background-dark)
 	border-radius: var(--border-radius-small)
 	display: inline-flex
@@ -613,80 +550,4 @@
 		align-items: center
 
 
-.page
-	&__head
-		margin-bottom: var(--space-8)
-		width: 100%
-		display: flex
-		align-items: center
-	&__block
-		height: 40px
-		width: 40px
-		border-radius: var(--border-radius-large)
-		background-color: var(--background-dark)
-		display: flex
-		align-items: center
-		justify-content: center
-		color: var(--text-color)
-		transition: .3s
-		z-index: 2
-		&:hover
-			color: var(--primary-color)
-	&__body
-		padding: var(--space-8)
-		border-radius: var(--border-radius-large)
-		background-color: var(--background-dark)
-	&__title
-		text-align: center
-		width: 100%
-		margin-left: var(--space-5)
-		font-size: var(--h1-font-size)
-		line-height: var(--line-base)
-	&__h2
-		margin-top: var(--space-8)
-		margin-bottom: var(--space-4)
-	&__p
-		margin-bottom: var(--space-3)
-		&:last-child
-			margin-bottom: 0
-	&__list
-		padding: 0 var(--space-6)
-		margin: var(--space-4) 0
-		list-style: initial
-	&__item
-		margin-bottom: var(--space-2)
-		&:last-child
-			margin-bottom: 0
-	&__link
-		color: var(--brand-color)
-		transition: .3s
-		&:hover
-			color: var(--brand-color-alt)
-
-
-	&__content
-		display: grid
-		grid-template-columns: 1.5fr 1fr
-		gap: var(--space-12)
-	&__gallery
-		&-list
-			margin-top: var(--space-5)
-			display: flex
-			gap: var(--space-4)
-			flex-flow: row wrap
-		&-item
-			height: 72px
-			width: 72px
-			background-color: #fff
-			border-radius: var(--border-radius-large)
-	&__img
-		background-color: rgba(255, 255, 255, 1)
-		border-radius: var(--border-radius-large)
-		display: flex
-		align-items: center
-		justify-content: center
-
-	&__details
-		margin-top: var(--space-8)
-		padding-top: var(--space-6)
-		border-top: 1px solid rgba(255, 255, 255, 0.1)
+@import page
