@@ -117,10 +117,14 @@ html
 
 body
 	margin: 0
+	min-height: 100vh
+	height: 100%
 	font-family: var(--body-font)
 	font-size: 16px
 	color: var(--text-color)
 	position: relative
+	display: flex
+	flex-direction: column
 	&::before
 		content: ''
 		position: absolute
@@ -456,10 +460,11 @@ button
 
 // Main
 .main
+	padding-top: 80px
 
 // Home
 .home
-	padding: calc(var(--space-12) + 80px) 0 var(--space-12)
+	padding: var(--space-12) 0
 	position: relative
 	&__box
 		display: flex
@@ -774,6 +779,7 @@ button
 
 // Footer
 .footer
+	margin-top: auto
 	padding: var(--space-24) 0 var(--space-5)
 	&__container
 		display: grid
@@ -836,3 +842,55 @@ button
 	&__icon
 		font-size: 2.4rem
 		font-weight: var(--font-medium)
+
+
+.page
+	&__head
+		margin-bottom: var(--space-8)
+		width: 100%
+		display: flex
+		align-items: center
+	&__block
+		height: 40px
+		width: 40px
+		border-radius: 12px
+		background-color: rgba(0, 0, 0, .3)
+		display: flex
+		align-items: center
+		justify-content: center
+		color: var(--text-color)
+		transition: .3s
+		z-index: 2
+		&:hover
+			color: var(--title-color)
+	&__body
+		padding: var(--space-8)
+		// height: 500px
+		border-radius: 12px
+		background-color: rgba(0, 0, 0, .3)
+	&__title
+		text-align: center
+		width: 100%
+		margin-left: -20px
+		font-size: var(--h1-font-size)
+		line-height: var(--line-base)
+	&__h2
+		margin-top: var(--space-8)
+		margin-bottom: var(--space-4)
+	&__p
+		margin-bottom: var(--space-3)
+		&:last-child
+			margin-bottom: 0
+	&__list
+		padding: 0 var(--space-6)
+		margin: var(--space-4) 0
+		list-style: initial
+	&__item
+		margin-bottom: var(--space-2)
+		&:last-child
+			margin-bottom: 0
+	&__link
+		color: var(--first-color)
+		transition: .3s
+		&:hover
+			color: var(--first-color-alt)

@@ -40,6 +40,7 @@ document.addEventListener("DOMContentLoaded", function () {
         ? header.classList.add("header_hide")
         : header.classList.remove("header_hide");
     } else {
+      header.classList.remove("header_hide");
       header.classList.remove("header_scroll");
     }
 
