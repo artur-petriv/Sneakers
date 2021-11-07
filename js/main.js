@@ -66,7 +66,7 @@ document.addEventListener("DOMContentLoaded", function () {
   });
 
   // Favorite -> Swiper -> Init
-  const swiper2 = new Swiper(".favorite__swiper", {
+  const swiper2 = new Swiper(".trending__swiper", {
     slidesPerView: 3,
     spaceBetween: 16,
 

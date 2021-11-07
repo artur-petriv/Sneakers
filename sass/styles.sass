@@ -1,173 +1,9 @@
-// Fonts
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;900&display=swap")
+@import variables
+@import reset
+@import animation
 
-// Variables
-\:root
-	--header-height: 8rem
-
-	// Colors
-	--hue: 10
-	--first-color: hsl(var(--hue) 90% 50%)
-	--first-color-alt: hsl(var(--hue) 90% 45%)
-	--title-color: hsl(var(--hue) 3% 100%)
-	--text-color: hsl(var(--hue) 3% 85%)
-	--text-color-light: hsl(var(--hue) 3% 60%)
-	--hover-color: #f2f2a6
-
-	--body-color: linear-gradient(105deg, hsl(275deg 50% 35%) 0%, hsl(212deg 50% 50%) 100%)
-
-	// Typography
-	--body-font: 'Poppins', sans-serif
-	--biggest-font-size: 5.9rem
-	--h1-font-size: 3.6rem
-	--h2-font-size: 2.4rem
-	--h3-font-size: 1.8rem
-	--normal-font-size: 1.6rem
-	--small-font-size: 1.4rem
-	--smaller-font-size: 1.2rem
-
-	// Fonts weights
-	--font-medium: 500
-	--font-semi-bold: 600
-	--font-bold: 700
-	--font-black: 900
-
-	// Line-heights
-	--line-base: 1
-	--line-normal: 1.2
-	--line-big: 1.35
-	--line-large: 1.45
-
-	// Spaces
-	--space-1: .4rem
-	--space-2: .8rem
-	--space-3: 1.2rem
-	--space-4: 1.6rem
-	--space-5: 2rem
-	--space-6: 2.4rem
-	--space-7: 2.8rem
-	--space-8: 3.2rem
-	--space-9: 3.6rem
-	--space-10: 4rem
-	--space-11: 4.4rem
-	--space-12: 4.8rem
-	--space-13: 5.2rem
-	--space-14: 5.6rem
-	--space-15: 6.4rem
-	--space-16: 6.8rem
-	--space-17: 7.2rem
-	--space-18: 7.6rem
-	--space-19: 8rem
-	--space-20: 8.4rem
-	--space-21: 8.8rem
-	--space-22: 9.2rem
-	--space-23: 9.6rem
-	--space-24: 10rem
-
-// Background Animation
-@-webkit-keyframes bganimation
-	0%
-	100%
-		background-position: 0 25%
-
-	25%,
-	75%
-		background-position: 50% 50%
-
-	50%
-		background-position: 100% 100%
-
-@keyframes bganimation
-	0%
-		background-position: 0 25%
-
-	100%
-		background-position: 0 25%
-
-	25%
-		background-position: 50% 50%
-
-	75%
-		background-position: 50% 50%
-
-	50%
-		background-position: 100% 100%
-
-// Responsive typography
-// @media screen and (min-width: 992px)
-// 	\:root
-// 		--biggest-font-size: 2rem
-// 		--h1-font-size: 4rem
-// 		--h2-font-size: 2.4rem
-// 		--h3-font-size: 1.8rem
-// 		--normal-font-size: 1.6rem
-// 		--small-font-size: 1.4rem
-// 		--smaller-font-size: 1.2rem
-
-
-// Base
-*
-	box-sizing: border-box
-	padding: 0
-	margin: 0
-
-html
-	scroll-behavior: smooth
-	font-size: 10px
-
-body
-	margin: 0
-	min-height: 100vh
-	height: 100%
-	font-family: var(--body-font)
-	font-size: 16px
-	color: var(--text-color)
-	position: relative
-	display: flex
-	flex-direction: column
-	&::before
-		content: ''
-		position: absolute
-		top: 0
-		left: 0
-		background: var(--body-color)
-		animation: 20s infinite bganimation
-		background-size: 210% 120%
-		height: 100%
-		width: 100%
-		display: block
-		z-index: -1
-
-img
-	height: auto
-	max-width: 100%
-
-a
-	text-decoration: none
-
-ul
-	list-style: none
-
-h1, h2, h3, h4
-	color: var(--title-color)
-	font-weight: var(--font-semi-bold)
-	line-height: var(--line-big)
-
-h3
-	font-size: var(--h3-font-size)
-
-button, input
-	border: none
-	outline: none
-
-button
-	cursor: pointer
-	font-family: var(--body-font)
-	font-size: var(--normal-font-size)
-	line-height: var(--line-base)
-
-
-// Global CSS classes
+// Global reusable CSS classes
 .section
 	padding: var(--space-24) 0 var(--space-8)
 	&__title
@@ -189,44 +25,44 @@ button
 .button
 	padding: var(--space-3) var(--space-6)
 	display: inline-block
-	background-color: var(--first-color)
-	color: var(--title-color)
-	border-radius: .4rem
+	background-color: var(--brand-color)
+	color: var(--primary-color)
+	border-radius: var(--border-radius-small)
 	font-weight: var(--font-medium)
 	line-height: var(--line-normal)
 	transition: .3s
 	font-size: var(--small-font-size)
 	&:hover
-		background-color: var(--first-color-alt)
+		background-color: var(--brand-color-alt)
 	&_link
 		display: flex
 		align-items: center
 		column-gap: var(--space-2)
-		color: var(--title-color)
+		color: var(--primary-color)
 		font-size: var(--small-font-size)
 		transition: .3s
 		&:hover
-			color: hsl(60, 75%, 80%)
+			color: var(--hover-link-color)
 
 .price
-	color: var(--title-color)
+	color: var(--primary-color)
 	line-height: var(--line-base)
 	font-weight: var(--font-medium)
 	&_old
 		text-decoration: line-through
-		color: var(--first-color)
+		color: var(--brand-color)
 		line-height: var(--line-base)
 		font-weight: var(--font-normal)
 
 
 .bg
 	&_black
-		background-color: rgba(0, 0, 0, .3)
+		background-color: var(--background-dark)
 
 .product
 	&__item
 		padding: var(--space-7)
-		border-radius: 1.2rem
+		border-radius: var(--border-radius-large)
 		display: flex
 		flex-direction: column
 		align-items: flex-start
@@ -238,22 +74,19 @@ button
 			&:hover
 				transform: scale(1.1)
 	&__stock
-		margin-bottom: var(--space-4)
 		padding: var(--space-1) var(--space-2)
 		font-size: var(--smaller-font-size)
-		background-color: rgba(35, 120, 40, .5)
-		color: #25d432
+		background-color: var(--positive-background-color)
+		color: var(--positive-text-color)
 		display: inline-flex
-		border-radius: .4rem
+		border-radius: var(--border-radius-small)
 	&__title
 		font-size: var(--h3-font-size)
-		color: var(--title-color)
+		color: var(--primary-color)
 		text-align: left
 	&__description
 		font-size: var(--small-font-size)
 	&__prices
-		margin-top: var(--space-6)
-		margin-bottom: var(--space-6)
 		display: flex
 		align-items: flex-start
 		justify-content: flex-start
@@ -261,10 +94,10 @@ button
 	&__price
 		font-size: var(--normal-font-size)
 		font-weight: var(--font-medium)
-		color: var(--title-color)
+		color: var(--primary-color)
 		&_old
 			margin-left: var(--space-2)
-			color: var(--first-color)
+			color: var(--brand-color)
 			font-size: var(--smaller-font-size)
 			text-decoration: line-through
 
@@ -282,8 +115,8 @@ button
 			gap: var(--space-2)
 		&-size
 			padding: var(--space-1) var(--space-2)
-			background-color: rgba(0,0,0,.3)
-			border-radius: .4rem
+			background-color: var(--background-dark)
+			border-radius: var(--border-radius-small)
 			font-size: var(--small-font-size)
 			min-width: 34px
 			display: flex
@@ -306,6 +139,7 @@ button
 		display: flex
 		align-items: center
 		justify-content: space-between
+		line-height: var(--line-base)
 
 
 .pagination
@@ -315,14 +149,14 @@ button
 	justify-content: center
 	gap: var(--space-2)
 	&__arrow
-		padding: 4px 8px
-		border-radius: 4px
+		padding: var(--space-1) var(--space-2)
+		border-radius: var(--border-radius-large)
 	&__number
 		min-width: 34px
 		min-height: 34px
-		border-radius: 4px
-		padding: 4px 8px
-		background-color: rgba(0, 0, 0, .3)
+		border-radius: var(--border-radius-large)
+		padding: var(--space-1) var(--space-2)
+		background-color: var(--background-dark)
 		display: flex
 		justify-content: center
 		align-items: center
@@ -330,7 +164,7 @@ button
 		font-size: var(--normal-font-size)
 		transition: .3s
 		&:hover
-			color: var(--hover-color)
+			color: var(--hover-link-color)
 		&_selected
 			background-color: #fff
 			color: #333
@@ -338,14 +172,10 @@ button
 			cursor: default
 			&:hover
 				color: initial
-
-		&_unavailable
-				// color: var(--text-color)
 		&_plug
 			cursor: default
 			&:hover
 				color: inherit
-// Other styles
 
 
 // Swiper
@@ -355,36 +185,35 @@ button
 		&-bullet
 			height: 12px
 			width: 12px
-			background-color: var(--title-color)
+			background-color: var(--primary-color)
 			opacity: 0.25
 			&-active
 				opacity: 1
 	&-icon
 		font-size: 3rem
+	&-button
+		&-prev
+			left: -80px
+		&-next
+			right: -80px
 
 .swiper-button-next, .swiper-button-prev
-	padding: 4px
-	background-color: rgba(0, 0, 0, .3)
-	border-radius: 4px
+	padding: var(--space-1)
+	background-color: var(--background-dark)
+	border-radius: var(--border-radius-small)
 	display: flex
 	justify-content: center
 	align-items: center
 	width: auto
 	height: auto
-	color: rgba(255, 255, 255, .6)
+	color: var(--primary-color)
+	opacity: 0.9
 	transition: .3s
 	&:hover
-		color: rgba(255, 255, 255, 1)
-		background-color: rgba(0, 0, 0, .4)
+		opacity: 1
 
 .swiper-button-next:after, .swiper-button-prev:after
 	content: ''
-
-.swiper-button-prev
-	left: -80px
-
-.swiper-button-next
-	right: -80px
 
 
 // Header
@@ -414,34 +243,34 @@ button
 		align-items: center
 	&__item
 	&__link
-		color: var(--title-color)
+		color: var(--primary-color)
 		transition: .3s
 		position: relative
 		&:hover
-			color: hsl(60, 75%, 80%)
+			color: var(--hover-link-color)
 		&_active
 			&::after
 				content: ''
 				width: 100%
 				height: 2px
-				background-color: var(--first-color-alt)
+				background-color: var(--brand-color-alt)
 				position: absolute
 				bottom: -8px
 				left: 0
 			&:hover
-				color: var(--title-color)
+				color: var(--primary-color)
 		
 	&__button
 		padding: var(--space-3) var(--space-6)
-		color: var(--title-color)
+		color: var(--primary-color)
 		background-color: transparent
 		display: inline-flex
-		border: 2px solid var(--title-color)
+		border: 2px solid var(--primary-color)
 		border-radius: 30px
 		transition: .3s
 		&:hover
-			color: hsl(60, 75%, 80%)
-			border-color: hsl(60, 75%, 80%)
+			color: var(--hover-link-color)
+			border-color: var(--hover-link-color)
 			background-color: transparent
 
 .logo
@@ -449,10 +278,10 @@ button
 	align-items: center
 	column-gap: var(--space-2)
 	font-weight: var(--font-semi-bold)
-	color: var(--title-color)
-	font-size: 1.8rem
+	color: var(--primary-color)
+	font-size: var(--h3-font-size)
 	&__img
-		margin-right: 2px
+		margin-right: var(--space-1)
 		width: 24px
 		display: block
 		object-fit: cover
@@ -460,7 +289,7 @@ button
 
 // Main
 .main
-	padding-top: 80px
+	padding-top: var(--header-height)
 
 // Home
 .home
@@ -470,81 +299,16 @@ button
 		display: flex
 		align-items: center
 		column-gap: var(--space-10)
-	&__stock
-		margin-top: var(--space-2)
-		background-color: rgba(35, 120, 40, .5)
-		color: #25d432
-		padding: 4px 8px
-		display: inline-flex
-		border-radius: 4px
-		font-size: var(--small-font-size)
+
+	// Image
 	&__image
 		flex: 1 0
 	&__img
 		object-fit: cover
 		display: block
 		width: 100%
-	&__more
-		transform: translateY(-5rem)
-		display: flex
-		// align-items: flex-end
-		align-items: center
-		column-gap: var(--space-2)
-		line-height: var(--line-base)
-		justify-content: center
-		&-content
-			font-size: var(--small-font-size)
-			text-align: left
-		&-title
-			margin-bottom: var(--space-1)
-			font-weight: var(--font-semi-bold)
-		&-text
-		&-figure
-			height: 6rem
-			width: 2px
-			background-color: #fff
-			position: relative
-			&::before
-				content: ''
-				position: absolute
-				top: -3px
-				left: -3px
-				height: 8px
-				width: 8px
-				background-color: #fff
-				border-radius: 50%
-		&-linear
-			height: 1.2rem
-			width: 5px
-			// background-color: #2CD8D5
-			opacity: 0.4
-			background-color: var(--text-color)
-			position: relative
-			&::before
-				content: ''
-				position: absolute
-				top: -5px
-				left: 0
-				height: 1.2rem
-				width: 5px
-				// background-color: var(--first-color)
-				background-color: var(--text-color)
-				transform: translateY(-50%)
-				border-top-right-radius: 3px
-				border-top-left-radius: 3px
-			&::after
-				content: ''
-				position: absolute
-				top: 5px
-				left: 0
-				height: 1.2rem
-				width: 5px
-				// background-color: #8E37D7
-				background-color: var(--text-color)
-				transform: translateY(50%)
-				border-bottom-right-radius: 3px
-				border-bottom-left-radius: 3px
 	
+	// Info
 	&__info
 		flex: 1 0
 	&__subtitle
@@ -554,15 +318,15 @@ button
 		font-size: var(--biggest-font-size)
 		font-weight: var(--font-black)
 		line-height: var(--line-normal)
+	&__stock
+		margin-top: var(--space-2)
+		margin-bottom: 0
+		font-size: var(--small-font-size)
 	&__p
 		margin-top: var(--space-4)
-		color: var(--text-color)
-		font-size: var(--normal-font-size)
 		font-weight: var(--font-medium)
 	&__prices
 		margin-top: var(--space-7)
-		display: flex
-		align-items: flex-start
 	&__price
 		font-size: var(--h3-font-size)
 		&_old
@@ -570,37 +334,39 @@ button
 			font-size: var(--small-font-size)
 	&__buttons
 		margin-top: var(--space-8)
-		display: flex
-		align-items: center
-		justify-content: space-between
-		line-height: var(--line-base)
-		font-size: var(--normal-font-size)
 	&__icon
-		font-size: 20px
+		font-size: 2rem
 
 
-// Favorite
-.favorite
+// Trending
+.trending
 	&__list
 		position: relative
 	&__item
 		&-img
-			margin-bottom: var(--space-3)
+			margin-bottom: var(--space-4)
 		&-title
 			margin-bottom: var(--space-3)
-		&-description
+	&__stock
+	&__options
+		margin-top: var(--space-4)
+	&__prices
+		margin-top: var(--space-6)
+	&__buttons
+		margin-top: var(--space-6)
 
-// About
-.about
+	
+// Shipping
+.shipping
 	&__container
 		padding: var(--space-7)
 		display: flex
 		justify-content: space-between
-		border-radius: 12px
+		border-radius: var(--border-radius-large)
 	&__title
-		text-align: left
 		padding-bottom: var(--space-1)
-		font-size: 2.4rem
+		font-size: var(--h2-font-size)
+		text-align: left
 	&__group
 		display: flex
 		flex-direction: column
@@ -608,9 +374,8 @@ button
 		display: flex
 		align-items: center
 		&-text
-			// margin-bottom: var(--space-8)
 	&__image
-		margin-right: var(--space-4)
+		margin-right: var(--space-3)
 		width: 100px
 		display: flex
 	&__img
@@ -619,6 +384,7 @@ button
 		justify-self: flex-end
 		align-self: center
 	
+
 // Shop
 .shop
 	&__list
@@ -626,9 +392,8 @@ button
 		text-align: center
 		justify-content: center
 	&__item
-		padding: var(--space-6) var(--space-3)
-		border-radius: 2rem
-		background-color: rgba(0, 0, 0, .3)
+		// padding: var(--space-6) var(--space-3)
+		// background-color: var(--background-dark)
 	&__img
 		margin-bottom: var(--space-2)
 		// width: 120px
@@ -643,7 +408,7 @@ button
 		display: inline-block
 	&__price
 		margin-top: var(--space-4)
-		color: var(--title-color)
+		color: var(--primary-color)
 		font-weight: var(--font-medium)
 		font-size: var(--normal-font-size)
 	&__button
@@ -657,8 +422,8 @@ button
 		gap: var(--space-8)
 	&__wrap
 		padding: var(--space-7)
-		background-color: rgba(0, 0, 0, .3)
-		border-radius: 12px
+		background-color: var(--background-dark)
+		border-radius: var(--border-radius-large)
 	&__title
 		font-size: var(--h2-font-size)
 		line-height: var(--line-base)
@@ -674,51 +439,52 @@ button
 		display: flex
 	&__img
 		object-fit: contain
+
 // New
-.new
-	&__list
-		display: grid
-		grid-template-columns: repeat(3, 1fr)
-		gap: var(--space-4)
-		text-align: center
-	&__item
-		padding: var(--space-7) 0
-		background-color: rgba(0, 0, 0, .3)
-		border-radius: 1.6rem
-		position: relative
-		&-img
-			margin-bottom: var(--space-4)
-			width: 150px
-			height: 150px
-			object-fit: cover
-	&__option
-		padding: var(--space-2) var(--space-3)
-		position: absolute
-		top: 2.4rem
-		left: 2.4rem
-		background-color: var(--first-color)
-		line-height: var(--line-base)
-		border-radius: .5rem
-		font-size: var(--small-font-size)
-	&__title
-	&__description
-		font-size: var(--small-font-size)
-	&__prices
-		margin-top: var(--space-4)
-		margin-bottom: var(--space-6)
-		display: flex
-		align-items: flex-start
-		justify-content: center
-		line-height: var(--line-base)
-	&__price
-		&-new
-			font-weight: var(--font-medium)
-			color: var(--title-color)
-		&-old
-			margin-left: var(--space-2)
-			color: var(--first-color)
-			font-size: var(--smaller-font-size)
-			text-decoration: line-through
+// .new
+// 	&__list
+// 		display: grid
+// 		grid-template-columns: repeat(3, 1fr)
+// 		gap: var(--space-4)
+// 		text-align: center
+// 	&__item
+// 		padding: var(--space-7) 0
+// 		background-color: var(--background-dark)
+// 		border-radius: 1.6rem
+// 		position: relative
+// 		&-img
+// 			margin-bottom: var(--space-4)
+// 			width: 150px
+// 			height: 150px
+// 			object-fit: cover
+// 	&__option
+// 		padding: var(--space-2) var(--space-3)
+// 		position: absolute
+// 		top: 2.4rem
+// 		left: 2.4rem
+// 		background-color: var(--brand-color)
+// 		line-height: var(--line-base)
+// 		border-radius: .5rem
+// 		font-size: var(--small-font-size)
+// 	&__title
+// 	&__description
+// 		font-size: var(--small-font-size)
+// 	&__prices
+// 		margin-top: var(--space-4)
+// 		margin-bottom: var(--space-6)
+// 		display: flex
+// 		align-items: flex-start
+// 		justify-content: center
+// 		line-height: var(--line-base)
+// 	&__price
+// 		&-new
+// 			font-weight: var(--font-medium)
+// 			color: var(--primary-color)
+// 		&-old
+// 			margin-left: var(--space-2)
+// 			color: var(--brand-color)
+// 			font-size: var(--smaller-font-size)
+// 			text-decoration: line-through
 
 // Action
 .action
@@ -734,8 +500,8 @@ button
 		gap: var(--space-8)
 	&__socials
 		padding: var(--space-7)
-		background-color: rgba(0, 0, 0, .3)
-		border-radius: 12px
+		background-color: var(--background-dark)
+		border-radius: var(--border-radius-large)
 		align-self: flex-start
 		&-title
 	&__list
@@ -746,16 +512,16 @@ button
 		display: flex
 	&__link
 		padding: var(--space-2) var(--space-2)
-		background-color: rgba(0, 0, 0, .3)
-		border-radius: .4rem
-		color: var(--title-color)
+		background-color: var(--background-dark)
+		border-radius: var(--border-radius-small)
+		color: var(--primary-color)
 		display: inline-flex
 		align-items: center
 		justify-content: center
 		color: var(--text-color)
 		transition: .3s
 		&:hover
-			color: var(--title-color)
+			color: var(--primary-color)
 	&__subtitle
 		margin-bottom: var(--space-3)
 		text-align: left
@@ -764,13 +530,13 @@ button
 		display: flex
 		flex-direction: column
 		align-items: center
-		border-radius: 1rem
-		background-color: rgba(0, 0, 0, .3)
+		border-radius: var(--border-radius-large)
+		background-color: var(--background-dark)
 	&__input
 		padding: var(--space-4) var(--space-5)
 		margin-top: var(--space-3)
 		width: 100%
-		border-radius: .4rem
+		border-radius: var(--border-radius-small)
 		&:first-child
 			margin-top: 0
 	&__button
@@ -789,7 +555,7 @@ button
 	&__group
 	&__title
 		margin-bottom: var(--space-4)
-		color: var(--title-color)
+		color: var(--primary-color)
 		font-size: var(--h3-font-size)
 	&__description
 		margin-top: var(--space-4)
@@ -798,16 +564,16 @@ button
 	&__social
 		margin-right: var(--space-1)
 		padding: var(--space-1)
-		background-color: rgba(0,0,0,.3)
-		border-radius: .4rem
-		color: var(--title-color)
+		background-color: var(--background-dark)
+		border-radius: var(--border-radius-small)
+		color: var(--primary-color)
 		display: inline-flex
 		align-items: center
 		justify-content: center
 		color: var(--text-color)
 		transition: .3s
 		&:hover
-			color: var(--title-color)
+			color: var(--primary-color)
 	&__item
 		margin-bottom: var(--space-1)
 		&:last-child
@@ -817,7 +583,7 @@ button
 		color: var(--text-color)
 		transition: .3s
 		&:hover
-			color: var(--title-color)
+			color: var(--primary-color)
 	&__copyright
 		margin-top: var(--space-15)
 		text-align: center
@@ -829,19 +595,22 @@ button
 .scrollup
 	padding: var(--space-1)
 	position: fixed
-	bottom: 3rem
-	right: 3rem
-	background-color: rgba(0,0,0,.3)
-	border-radius: .4rem
+	bottom: 4%
+	right: 3%
+	background-color: var(--background-dark)
+	border-radius: var(--border-radius-small)
 	display: inline-flex
 	color: var(--text-color)
 	line-height: var(--line-base)
 	transition: .3s
 	&:hover
-		color: var(--title-color)
+		color: var(--primary-color)
 	&__icon
 		font-size: 2.4rem
 		font-weight: var(--font-medium)
+		display: flex
+		justify-content: center
+		align-items: center
 
 
 .page
@@ -853,8 +622,8 @@ button
 	&__block
 		height: 40px
 		width: 40px
-		border-radius: 12px
-		background-color: rgba(0, 0, 0, .3)
+		border-radius: var(--border-radius-large)
+		background-color: var(--background-dark)
 		display: flex
 		align-items: center
 		justify-content: center
@@ -862,16 +631,15 @@ button
 		transition: .3s
 		z-index: 2
 		&:hover
-			color: var(--title-color)
+			color: var(--primary-color)
 	&__body
 		padding: var(--space-8)
-		// height: 500px
-		border-radius: 12px
-		background-color: rgba(0, 0, 0, .3)
+		border-radius: var(--border-radius-large)
+		background-color: var(--background-dark)
 	&__title
 		text-align: center
 		width: 100%
-		margin-left: -20px
+		margin-left: var(--space-5)
 		font-size: var(--h1-font-size)
 		line-height: var(--line-base)
 	&__h2
@@ -890,7 +658,35 @@ button
 		&:last-child
 			margin-bottom: 0
 	&__link
-		color: var(--first-color)
+		color: var(--brand-color)
 		transition: .3s
 		&:hover
-			color: var(--first-color-alt)
+			color: var(--brand-color-alt)
+
+
+	&__content
+		display: grid
+		grid-template-columns: 1.5fr 1fr
+		gap: var(--space-12)
+	&__gallery
+		&-list
+			margin-top: var(--space-5)
+			display: flex
+			gap: var(--space-4)
+			flex-flow: row wrap
+		&-item
+			height: 72px
+			width: 72px
+			background-color: #fff
+			border-radius: var(--border-radius-large)
+	&__img
+		background-color: rgba(255, 255, 255, 1)
+		border-radius: var(--border-radius-large)
+		display: flex
+		align-items: center
+		justify-content: center
+
+	&__details
+		margin-top: var(--space-8)
+		padding-top: var(--space-6)
+		border-top: 1px solid rgba(255, 255, 255, 0.1)
