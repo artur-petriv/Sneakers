@@ -12,24 +12,16 @@ body
 	margin: 0
 	min-height: 100vh
 	height: 100%
+	width: 100%
 	font-family: var(--body-font)
 	font-size: var(--normal-font-size)
 	color: var(--text-color)
 	position: relative
 	display: flex
 	flex-direction: column
-	&::before
-		content: ''
-		position: absolute
-		top: 0
-		left: 0
-		background: var(--body-gradient)
-		animation: 20s infinite bganimation
-		background-size: 210% 120%
-		height: 100%
-		width: 100%
-		display: block
-		z-index: -1
+	background: var(--body-gradient)
+	animation: 20s infinite bganimation
+	background-size: 210% 120%
 
 img
 	height: auto
@@ -52,6 +44,7 @@ h3
 button, input
 	border: none
 	outline: none
+	font-size: var(--normal-font-size)
 
 button
 	cursor: pointer

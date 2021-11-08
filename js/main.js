@@ -55,13 +55,13 @@ document.addEventListener("DOMContentLoaded", function () {
   const swiper = new Swiper(".home__swiper", {
     slidesPerView: 1,
     pagination: {
-      el: ".swiper-pagination1",
+      el: ".swiper-pagination-1",
       clickable: true,
     },
 
     navigation: {
-      nextEl: ".swiper-button-next1",
-      prevEl: ".swiper-button-prev1",
+      nextEl: ".swiper-button-next-1",
+      prevEl: ".swiper-button-prev-1",
     },
   });
 
@@ -71,8 +71,8 @@ document.addEventListener("DOMContentLoaded", function () {
     spaceBetween: 16,
 
     navigation: {
-      nextEl: ".swiper-button-next2",
-      prevEl: ".swiper-button-prev2",
+      nextEl: ".swiper-button-next-2",
+      prevEl: ".swiper-button-prev-2",
     },
   });
 });

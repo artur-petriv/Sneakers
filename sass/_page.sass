@@ -1,36 +1,22 @@
 
 .page
 	&__head
-		margin-bottom: var(--space-8)
+		margin-bottom: var(--space-6)
 		width: 100%
 		display: flex
 		align-items: center
-	&__block
-		height: 40px
-		width: 40px
-		border-radius: var(--border-radius-large)
-		background-color: var(--background-dark)
-		display: flex
-		align-items: center
-		justify-content: center
-		color: var(--text-color)
-		transition: .3s
-		z-index: 2
-		&:hover
-			color: var(--primary-color)
+	&__arrow
+		&_back
 	&__body
-		padding: var(--space-8)
+		padding: var(--space-10) var(--space-8)
 		border-radius: var(--border-radius-large)
 		background-color: var(--background-dark)
 	&__title
+		margin-left: -17px
 		text-align: center
 		width: 100%
-		margin-left: var(--space-5)
 		font-size: var(--h1-font-size)
 		line-height: var(--line-base)
-	&__h2
-		margin-top: var(--space-8)
-		margin-bottom: var(--space-4)
 	&__p
 		margin-bottom: var(--space-3)
 		&:last-child
@@ -53,7 +39,7 @@
 	&__content
 		display: grid
 		grid-template-columns: 1.5fr 1fr
-		gap: var(--space-12)
+		gap: var(--space-8)
 	&__gallery
 		&-list
 			margin-top: var(--space-5)

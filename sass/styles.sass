@@ -32,6 +32,7 @@
 	line-height: var(--line-normal)
 	transition: .3s
 	font-size: var(--small-font-size)
+	text-align: center
 	&:hover
 		background-color: var(--brand-color-alt)
 	&_link
@@ -67,6 +68,7 @@
 		flex-direction: column
 		align-items: flex-start
 		&-img
+			margin-bottom: var(--space-4)
 			object-fit: contain
 			display: block
 			transition: .3s
@@ -81,17 +83,20 @@
 		display: inline-flex
 		border-radius: var(--border-radius-small)
 	&__title
+		margin-bottom: var(--space-3)
 		font-size: var(--h3-font-size)
 		color: var(--primary-color)
 		text-align: left
 	&__description
 		font-size: var(--small-font-size)
 	&__prices
+		margin-top: var(--space-6)
 		display: flex
 		align-items: flex-start
 		justify-content: flex-start
 		line-height: var(--line-base)
 	&__price
+		// margin-top: var(--space-4)
 		font-size: var(--normal-font-size)
 		font-weight: var(--font-medium)
 		color: var(--primary-color)
@@ -102,6 +107,7 @@
 			text-decoration: line-through
 
 	&__options
+		margin-top: var(--space-4)
 	&__option
 		text-align: left
 		&-title
@@ -123,18 +129,26 @@
 			justify-content: center
 			align-items: center
 			cursor: pointer
+			transition: .3s
+			&:hover
+				color: var(--hover-link-color)
 		&_selected
 			background-color: white
 			color: #333
 			position: relative
 			font-weight: var(--font-medium)
 			cursor: default
+			&:hover
+				color: initial
 		&_unavailable
 			opacity: 0.4
 			text-decoration: line-through
 			cursor: default
+			&:hover
+				color: inherit
 		
 	&__buttons
+		margin-top: var(--space-7)
 		width: 100%
 		display: flex
 		align-items: center
@@ -218,23 +232,26 @@
 		&-next
 			right: -80px
 
-.swiper-button-next, .swiper-button-prev
-	padding: var(--space-1)
-	background-color: var(--background-dark)
-	border-radius: var(--border-radius-small)
-	display: flex
-	justify-content: center
-	align-items: center
-	width: auto
-	height: auto
-	color: var(--primary-color)
-	opacity: 0.9
-	transition: .3s
-	&:hover
-		opacity: 1
-
 .swiper-button-next:after, .swiper-button-prev:after
 	content: ''
+
+.arrow
+	&__button
+		padding: var(--space-1)
+		background-color: var(--background-dark)
+		border-radius: var(--border-radius-small)
+		display: flex
+		justify-content: center
+		align-items: center
+		width: auto
+		height: auto
+		color: var(--primary-color)
+		opacity: 0.9
+		transition: .3s
+		font-size: 3rem
+		z-index: 2
+		&:hover
+			opacity: 1
 
 
 // Header
@@ -273,8 +290,8 @@
 			&::after
 				content: ''
 				width: 100%
-				height: 2px
-				background-color: var(--brand-color-alt)
+				height: 3px
+				background-color: var(--secondary-color)
 				position: absolute
 				bottom: -8px
 				left: 0
@@ -365,16 +382,16 @@
 		position: relative
 	&__item
 		&-img
-			margin-bottom: var(--space-4)
+			// margin-bottom: var(--space-4)
 		&-title
-			margin-bottom: var(--space-3)
+			// margin-bottom: var(--space-3)
 	&__stock
 	&__options
-		margin-top: var(--space-4)
+		// margin-top: var(--space-4)
 	&__prices
-		margin-top: var(--space-6)
+		// margin-top: var(--space-6)
 	&__buttons
-		margin-top: var(--space-6)
+		// margin-top: var(--space-6)
 
 
 // Shipping
@@ -409,26 +426,18 @@
 // Shop
 .shop
 	&__list
-		justify-content: center
+		// justify-content: center
 	&__item
 		&-title
-			margin-bottom: var(--space-3)
+			// margin-bottom: var(--space-3)
 		&-img
-			margin-bottom: var(--space-4)
-	&__img
-		margin-bottom: var(--space-2)
-		object-fit: cover
+			// margin-bottom: var(--space-4)
 	&__options
-		margin-top: var(--space-4)
+		// margin-top: var(--space-4)
 	&__prices
-		margin-top: var(--space-6)
-	&__price
-		margin-top: var(--space-4)
-		color: var(--primary-color)
-		font-weight: var(--font-medium)
-		font-size: var(--normal-font-size)
+		// margin-top: var(--space-6)
 	&__buttons
-		margin-top: var(--space-7)
+		// margin-top: var(--space-7)
 
 
 // Sale
@@ -530,24 +539,11 @@
 
 // Scroll Up
 .scrollup
-	padding: var(--space-1)
 	position: fixed
 	bottom: 40px
 	right: 32px
-	background-color: var(--background-dark)
-	border-radius: var(--border-radius-small)
-	display: inline-flex
-	color: var(--text-color)
-	line-height: var(--line-base)
-	transition: .3s
-	&:hover
-		color: var(--primary-color)
-	&__icon
-		font-size: 2.4rem
-		font-weight: var(--font-medium)
-		display: flex
-		justify-content: center
-		align-items: center
 
 
 @import page
+@import product
+@import checkout
