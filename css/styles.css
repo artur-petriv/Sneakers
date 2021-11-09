@@ -63,6 +63,12 @@
   --space-25: 100px;
 }
 
+@media screen and (max-width: 1200px) {
+  :root {
+    --biggest-font-size: 4.4rem;
+  }
+}
+
 * {
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
@@ -181,7 +187,9 @@ button {
 
 .container {
   margin: 0 auto;
-  width: 968px;
+  padding: 0 var(--space-4);
+  max-width: 968px;
+  width: 100%;
 }
 
 .grid-items-3 {
@@ -584,12 +592,42 @@ button {
   font-size: 3rem;
 }
 
+@media screen and (max-width: 1200px) {
+  .swiper__arrows {
+    margin-top: var(--space-6);
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+    -webkit-justify-content: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+    -webkit-align-items: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+}
+
 .swiper-button-prev {
   left: -80px;
 }
 
+@media screen and (max-width: 1200px) {
+  .swiper-button-prev {
+    left: 0;
+  }
+}
+
 .swiper-button-next {
   right: -80px;
+}
+
+@media screen and (max-width: 1200px) {
+  .swiper-button-next {
+    right: 0;
+  }
 }
 
 .swiper-button-next:after, .swiper-button-prev:after {
@@ -625,6 +663,17 @@ button {
 
 .arrow__button:hover {
   opacity: 1;
+}
+
+@media screen and (max-width: 1200px) {
+  .arrow__button {
+    margin-top: 0;
+    margin-right: var(--space-3);
+    position: initial;
+  }
+  .arrow__button:last-of-type {
+    margin-right: 0;
+  }
 }
 
 .header {

@@ -13,7 +13,9 @@
 
 .container
 	margin: 0 auto
-	width: 968px
+	padding: 0 var(--space-4)
+	max-width: 968px
+	width: 100%
 
 .grid
 	&-items-3
@@ -226,11 +228,21 @@
 				opacity: 1
 	&-icon
 		font-size: 3rem
+	&__arrows
+		@media screen and (max-width: $bp-xl)
+			margin-top: var(--space-6)
+			display: flex
+			justify-content: center
+			align-items: center
 	&-button
 		&-prev
 			left: -80px
+			@media screen and (max-width: $bp-xl)
+				left: 0
 		&-next
 			right: -80px
+			@media screen and (max-width: $bp-xl)
+				right: 0
 
 .swiper-button-next:after, .swiper-button-prev:after
 	content: ''
@@ -252,6 +264,12 @@
 		z-index: 2
 		&:hover
 			opacity: 1
+		@media screen and (max-width: $bp-xl)
+			margin-top: 0
+			margin-right: var(--space-3)
+			position: initial
+			&:last-of-type
+				margin-right: 0
 
 
 // Header
@@ -356,6 +374,7 @@
 		font-size: var(--biggest-font-size)
 		font-weight: var(--font-black)
 		line-height: var(--line-normal)
+
 	&__stock
 		margin-top: var(--space-2)
 		margin-bottom: 0
