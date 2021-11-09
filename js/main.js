@@ -36,9 +36,9 @@ document.addEventListener("DOMContentLoaded", function () {
     if (this.scrollY >= 50) {
       header.classList.add("header_scroll");
 
-      this.scrollY > prevY
-        ? header.classList.add("header_hide")
-        : header.classList.remove("header_hide");
+      this.scrollY > prevY ?
+        header.classList.add("header_hide") :
+        header.classList.remove("header_hide");
     } else {
       header.classList.remove("header_hide");
       header.classList.remove("header_scroll");
@@ -51,79 +51,60 @@ document.addEventListener("DOMContentLoaded", function () {
 
   window.addEventListener("scroll", headerScroll);
 
-  // // Home -> Swiper -> Init
-  // const swiper = new Swiper(".home__swiper", {
-  //   slidesPerView: 1,
-  //   spaceBetween: 16,
-  //   pagination: {
-  //     el: ".swiper-pagination-1",
-  //     type: "bullets",
-  //     // clickable: true,
-  //   },
+  // Home -> Swiper -> Init
+  const swiper = new Swiper(".home__swiper", {
+    slidesPerView: 1,
+    spaceBetween: 16,
+    pagination: {
+      el: ".swiper-pagination-1",
+      type: "fraction",
+      clickable: false,
+    },
 
-  //   breakpoints: {
-  //     992: {
-  //       pagination: {
-  //         type: "bullets",
-  //         // clickable: false,
-  //       },
-  //     },
-  //     1200: {
-  //       pagination: {
-  //         type: "fraction",
-  //         // clickable: false,
-  //       },
-  //     },
-  //   },
+    navigation: {
+      nextEl: ".swiper-button-next-1",
+      prevEl: ".swiper-button-prev-1",
+    },
 
-  //   navigation: {
-  //     nextEl: ".swiper-button-next-1",
-  //     prevEl: ".swiper-button-prev-1",
-  //   },
-  // });
+    breakpoints: {
+      992: {
+        pagination: {
+          type: "fraction",
+          clickable: false,
+        },
+      },
+      1200: {
+        pagination: {
+          type: "bullets",
+          clickable: true,
+        },
+      },
+    },
+  });
 
   // Favorite -> Swiper -> Init
   const swiper2 = new Swiper(".trending__swiper", {
-    slidesPerView: 3,
+    slidesPerView: 1,
     spaceBetween: 16,
 
     navigation: {
       nextEl: ".swiper-button-next-2",
       prevEl: ".swiper-button-prev-2",
     },
+
+    breakpoints: {
+      576: {
+        slidesPerView: 2,
+        spaceBetween: 16,
+      },
+      992: {
+        slidesPerView: 3,
+        spaceBetween: 16,
+      },
+      1200: {
+        slidesPerView: 3,
+        spaceBetween: 16,
+      },
+    },
   });
-});
-
-// Home -> Swiper -> Init
-const swiper = new Swiper(".home__swiper", {
-  // TODO: In progress
-  slidesPerView: 1,
-  spaceBetween: 16,
-  pagination: {
-    el: ".swiper-pagination-1",
-    type: "bullets",
-    // clickable: true,
-  },
-
-  breakpoints: {
-    992: {
-      slidesPerView: 1,
-      pagination: {
-        type: "bullets",
-        // clickable: false,
-      },
-    },
-    1200: {
-      slidesPerView: 2,
-      pagination: {
-        type: "fraction",
-        // clickable: false,
-      },
-    },
-  },
-
-  navigation: {
-    nextEl: ".swiper-button-next-1",
-    prevEl: ".swiper-button-prev-1",
-  },
 });
