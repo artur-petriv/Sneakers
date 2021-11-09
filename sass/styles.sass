@@ -7,10 +7,14 @@
 //Global reusable CSS classes
 .section
 	padding: var(--space-24) 0 var(--space-8)
+	@media screen and (max-width: $bp-md)
+		padding: var(--space-14) 0 var(--space-5)
 	&__title
 		padding-bottom: var(--space-12)
 		font-size: var(--h1-font-size)
 		text-align: left
+		@media screen and (max-width: $bp-md)
+			padding-bottom: var(--space-6)
 
 .container
 	margin: 0 auto
@@ -24,7 +28,7 @@
 	&-items-3
 		display: grid
 		grid-template-columns: repeat(3, 1fr)
-		gap: var(--space-4)
+		gap: var(--space-6)
 		justify-content: space-between
 		@media screen and (max-width: $bp-lg)
 			grid-template-columns: repeat(2, 1fr)
@@ -56,7 +60,7 @@
 			color: var(--hover-link-color)
 	&_card
 		@media screen and (max-width: $bp-lg)
-			margin-top: var(--space-3)
+			margin-top: var(--space-4)
 			width: 100%
 			&:first-child
 				margin-top: 0
@@ -82,6 +86,8 @@
 		display: flex
 		flex-direction: column
 		align-items: flex-start
+		@media screen and (max-width: $bp-sm)
+			padding: var(--space-5)
 		&-img
 			margin-bottom: var(--space-4)
 			object-fit: contain
@@ -172,7 +178,7 @@
 			flex-direction: column
 
 .pagination
-	margin-top: var(--space-7)
+	margin-top: var(--space-6)
 	display: flex
 	align-items: center
 	justify-content: center
@@ -234,6 +240,7 @@
 .swiper
 	&-pagination
 		position: initial
+		font-size: 1.5rem
 		&-bullet
 			height: 12px
 			width: 12px
@@ -249,6 +256,8 @@
 			display: flex
 			justify-content: center
 			align-items: center
+		@media screen and (max-width: $bp-md)
+			margin-top: var(--space-4)
 	&-button
 		&-prev
 			left: -80px
@@ -281,9 +290,16 @@
 		&:hover
 			opacity: 1
 		&_unactive
-			padding: var(--space-3) var(--space-6)
-			background-color: rgba(0,0,0, .15)
-			font-size: 1.5rem
+			padding: 0
+			background-color: transparent
+			display: flex
+			align-items: center
+			justify-content: center
+			@media screen and (max-width: $bp-xl)
+				padding: var(--space-3) var(--space-6)
+				background-color: rgba(0,0,0, .15)
+				font-size: 1.5rem
+
 		@media screen and (max-width: $bp-xl)
 			margin-top: 10px
 			margin-right: var(--space-3)
@@ -397,6 +413,8 @@
 .home
 	padding: var(--space-12) 0
 	position: relative
+	@media screen and (max-width: $bp-md)
+		padding: var(--space-8) 0
 	&__box
 		display: flex
 		align-items: center
@@ -416,6 +434,9 @@
 		object-fit: cover
 		display: block
 		width: 100%
+
+	&__arrows
+		margin-top: var(--space-7)
 
 	//Info
 	&__info
@@ -517,11 +538,15 @@
 			flex-direction: column
 			justify-content: center
 			align-items: center
+		@media screen and (max-width: $bp-sm)
+			padding: var(--space-7) var(--space-5)
 	&__title
 		font-size: var(--h2-font-size)
 		line-height: var(--line-base)
 	&__p
 		margin-top: var(--space-2)
+		@media screen and (max-width: $bp-md)
+			text-align: center
 	&__button
 		margin-top: var(--space-8)
 	&__image
@@ -556,6 +581,8 @@
 			flex-direction: column
 			justify-content: center
 			align-items: center
+		@media screen and (max-width: $bp-sm)
+			padding: var(--space-7) var(--space-5)
 	&__list
 		margin-top: var(--space-3)
 	&__subtitle
@@ -572,6 +599,8 @@
 		background-color: var(--background-dark)
 		@media screen and (max-width: $bp-md)
 			width: 100%
+		@media screen and (max-width: $bp-sm)
+			padding: var(--space-7) var(--space-5)
 	&__input
 		margin-bottom: var(--space-4)
 		padding: var(--space-4) var(--space-5)
@@ -624,6 +653,15 @@
 		margin-top: var(--space-15)
 		text-align: center
 		font-size: var(--small-font-size)
+
+//Scroll Bar
+::-webkit-scrollbar
+	width: 8px
+	background: hsl(var(--hue), 0%, 80%)
+
+	&-thumb
+		background: hsl(var(--hue), 2%, 16%)
+		border-radius: var(--border-radius-medium)
 
 //Scroll Up
 .scrollup
