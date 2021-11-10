@@ -1,39 +1,41 @@
 .page
-  &__gallery
-    &-list
-    &-item
-  &__img
+	&__gallery
+		&-list
+		&-item
+	&__img
 
-  &__info
-    &-title
-      margin-bottom: var(--space-1)
-      font-size: var(--h2-font-size)
-    &-article
-      margin-bottom: var(--space-3)
-      font-size: var(--small-font-size)
-    &_accent
+	&__info
+		&-title
+			margin-bottom: var(--space-1)
+			font-size: var(--h2-font-size)
+		&-article
+			margin-bottom: var(--space-3)
+			font-size: var(--small-font-size)
+		&_accent
 
-  &__details
-  &__h2
-    margin-bottom: var(--space-12)
-    position: relative
-    display: inline-flex
-    font-size: var(--h2-font-size)
-    &::after
-      content: ''
-      width: 100%
-      height: 3px
-      background-color: var(--secondary-color)
-      position: absolute
-      bottom: -8px
-      left: 0
-  &__h3
-    margin-top: var(--space-7)
-    margin-bottom: var(--space-2)
-    font-size: var(--h3-font-size)
-    &:first-of-type
-      margin-top: 0
-  &__p
-  &__ul
-    list-style: inside
-  &__li
+	&__details
+	&__h2
+		margin-bottom: var(--space-12)
+		position: relative
+		display: inline-flex
+		font-size: var(--h2-font-size)
+		&::after
+			content: ''
+			width: 100%
+			height: 3px
+			background-color: var(--secondary-color)
+			position: absolute
+			bottom: -8px
+			left: 0
+		&_space
+			margin: var(--space-8) 0 var(--space-6)
+	&__h3
+		margin-top: var(--space-7)
+		margin-bottom: var(--space-2)
+		font-size: var(--h3-font-size)
+		&:first-of-type
+			margin-top: 0
+	&__p
+	&__ul
+		list-style: inside
+	&__li

@@ -176,6 +176,7 @@
 		line-height: var(--line-base)
 		@media screen and (max-width: $bp-lg)
 			flex-direction: column
+			align-items: flex-start
 
 .pagination
 	margin-top: var(--space-6)
@@ -299,9 +300,8 @@
 				padding: var(--space-3) var(--space-6)
 				background-color: rgba(0,0,0, .15)
 				font-size: 1.5rem
-
 		@media screen and (max-width: $bp-xl)
-			margin-top: 10px
+			margin-top: 0
 			margin-right: var(--space-3)
 			position: initial
 			&:last-of-type
@@ -668,6 +668,9 @@
 	position: fixed
 	bottom: 40px
 	right: 32px
+	@media screen and (max-width: $bp-sm)
+		bottom: var(--space-6)
+		right: var(--space-4)
 
 @import page
 @import product
