@@ -13,10 +13,16 @@
   <!-- Material Design Icons -->
   <link href="https://fonts.googleapis.com/css2?family=Material+Icons" rel="stylesheet" />
   <!-- Boxicons -->
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/boxicons@latest/css/boxicons.min.css" />
-  <!-- CSS -->
+  <link rel="stylesheet" href="css/boxicons.min.css" />
+  <!-- Styles CSS -->
   <link rel="stylesheet" href="css/styles.css?v=1.6" />
   <title>Sneakers — Top Brands Sneakers Store!</title>
+  <style>
+    html.sr .visibility_hiden {
+      visibility: hidden;
+    }
+  </style>
+  <script src="js/scrollreveal.js"></script>
 </head>
 
 <body>
@@ -63,11 +69,11 @@
           <div class="swiper-wrapper">
             <section class="swiper-slide">
               <div class="home__box">
-                <div class="home__image">
+                <div class="home__image sr-home_left visibility_hiden">
                   <img src="img/home1-img.png" alt="" class="home__img" />
                 </div>
 
-                <div class="home__info">
+                <div class="home__info sr_bottom-delay visibility_hiden">
                   <h1 class="home__title product__title">NIKE PEGASUS</h1>
 
                   <div class="home__stock product__stock">In Stock</div>
@@ -358,7 +364,7 @@
         <h2 class="section__title">Shop</h2>
 
         <div class="shop__list grid-items-3">
-          <div class="product__item bg_black">
+          <div class="shop__item product__item bg_black">
             <img src="img/items/item_25.png" alt="" class="shop__item-img product__img" />
             <h3 class="shop__item-title product__title">
               Nike Free Air Force
@@ -397,7 +403,7 @@
             </div>
           </div>
 
-          <div class="product__item bg_black">
+          <div class="shop__item product__item bg_black">
             <img src="img/items/item_25.png" alt="" class="shop__item-img product__img" />
             <h3 class="shop__item-title product__title">
               Nike Free Air Force
@@ -436,7 +442,7 @@
             </div>
           </div>
 
-          <div class="product__item bg_black">
+          <div class="shop__item product__item bg_black">
             <img src="img/items/item_25.png" alt="" class="shop__item-img product__img" />
             <h3 class="shop__item-title product__title">
               Nike Free Air Force
@@ -475,7 +481,7 @@
             </div>
           </div>
 
-          <div class="product__item bg_black">
+          <div class="shop__item product__item bg_black">
             <img src="img/items/item_25.png" alt="" class="shop__item-img product__img" />
             <h3 class="shop__item-title product__title">
               Nike Free Air Force
@@ -514,7 +520,7 @@
             </div>
           </div>
 
-          <div class="product__item bg_black">
+          <div class="shop__item product__item bg_black">
             <img src="img/items/item_25.png" alt="" class="shop__item-img product__img" />
             <h3 class="shop__item-title product__title">
               Nike Free Air Force
@@ -553,7 +559,7 @@
             </div>
           </div>
 
-          <div class="product__item bg_black">
+          <div class="shop__item product__item bg_black">
             <img src="img/items/item_25.png" alt="" class="shop__item-img product__img" />
             <h3 class="shop__item-title product__title">
               Nike Free Air Force
@@ -613,7 +619,7 @@
     <!-- Info -->
     <section class="info section">
       <div class="info__container">
-        <div class="info__wrap">
+        <div class="info__wrap sr_left">
           <div class="info__image">
             <img src="img/delivery.png" alt="" class="info__img" />
           </div>
@@ -625,7 +631,7 @@
           <button class="info__button button">Read More</button>
         </div>
 
-        <div class="info__wrap">
+        <div class="info__wrap sr_right">
           <div class="info__image">
             <img src="img/corona.png" alt="" class="info__img" />
           </div>
@@ -640,10 +646,10 @@
     <!-- Contacts -->
     <section class="contacts section">
       <div class="contacts__container">
-        <h2 class="section__title">Contacts</h2>
+        <h2 class="section__title sr-title_left">Contacts</h2>
 
         <div class="contacts__wrap">
-          <form class="contacts__form" action="order.php" method="post">
+          <form class="contacts__form sr_bottom" action="order.php" method="post">
             <span class="contacts__subtitle">Just enter your name and mobile number and we’ll do the
               rest</span>
             <input class="contacts__input" type="text" name="name" required value="" placeholder="Enter your name" />
@@ -761,15 +767,15 @@
   </footer>
 
   <!-- Scroll Up -->
-  <a href="#" class="scrollup arrow__button">
+  <a href="#" class="scroll_up scroll_hidden arrow__button">
     <i class="bx bx-up-arrow-alt"></i>
   </a>
 
   <!-- Artur Petriv -->
 
   <!-- JS -->
-  <script defer src="js/swiper-bundle.min.js"></script>
-  <script defer src="js/main.js"></script>
+  <script src="js/swiper-bundle.min.js"></script>
+  <script src="js/main.js"></script>
 </body>
 
 </html>

@@ -5,7 +5,7 @@ document.addEventListener("DOMContentLoaded", function () {
     let prevArgs;
     let prevThis;
 
-    function container() {
+    return function container() {
       if (isThrottled) {
         prevArgs = arguments;
         prevThis = this;
@@ -23,33 +23,37 @@ document.addEventListener("DOMContentLoaded", function () {
         }
       }, ms);
     }
-
-    return container;
   }
 
   // Header -> On scroll
   let prevY;
+  const header = document.querySelector(".header");
+  const scrollUp = document.querySelector(".scroll_up");
 
   function headerScroll() {
-    const header = document.querySelector(".header");
+    if (!header) return;
 
     if (this.scrollY >= 50) {
       header.classList.add("header_scroll");
 
-      this.scrollY > prevY ?
-        header.classList.add("header_hide") :
-        header.classList.remove("header_hide");
+      this.scrollY > prevY
+        ? header.classList.add("header_hide")
+        : header.classList.remove("header_hide");
     } else {
       header.classList.remove("header_hide");
       header.classList.remove("header_scroll");
     }
 
     prevY = this.scrollY;
+
+    // Scroll Arrow
+    if (!scrollUp) return;
+    this.scrollY >= 400 ? scrollUp.classList.remove("scroll_hidden") : scrollUp.classList.add("scroll_hidden");
   }
 
-  headerScroll = throttle(headerScroll, 250);
-
+  headerScroll = throttle(headerScroll, 120);
   window.addEventListener("scroll", headerScroll);
+
 
   // Home -> Swiper -> Init
   const swiper = new Swiper(".home__swiper", {
@@ -82,6 +86,7 @@ document.addEventListener("DOMContentLoaded", function () {
     },
   });
 
+
   // Favorite -> Swiper -> Init
   const swiper2 = new Swiper(".trending__swiper", {
     slidesPerView: 1,
@@ -107,4 +112,29 @@ document.addEventListener("DOMContentLoaded", function () {
       },
     },
   });
+
+
+  // Animation -> Reveal -> Init
+  const scrollReveal = ScrollReveal({
+    distance: '120px',
+    viewOffset: {
+      bottom: 100
+    },
+    origin: 'top',
+    delay: 100,
+    duration: 1400,
+    // reset: true
+  })
+
+  scrollReveal.reveal(`.sr-home_left`, {origin: 'left'});
+  scrollReveal.reveal(`.sr_left`, {origin: 'left', mobile: false});
+  scrollReveal.reveal(`.sr-title_left`, {origin: 'left', mobile: false});
+  scrollReveal.reveal(`.footer__socials`, {origin: 'left', delay: 1400, mobile: false});
+  scrollReveal.reveal(`.sr_right`, {origin: 'right', mobile: false});
+  scrollReveal.reveal(`.shipping__container`, {origin: 'right', mobile: false});
+  scrollReveal.reveal(`.contacts__socials, .footer__container`, {origin: 'right', delay: 1000, mobile: false});
+  scrollReveal.reveal(`.shop__item`, {origin: 'bottom', interval: 250, mobile: false});
+  scrollReveal.reveal(`.sr_bottom`, {origin: 'bottom', mobile: false});
+  scrollReveal.reveal(`.contacts__form`, {origin: 'bottom', delay: 600, mobile: false});
+  scrollReveal.reveal(`.sr_bottom-delay`, {origin: 'bottom', delay: 1000});
 });

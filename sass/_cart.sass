@@ -5,6 +5,7 @@
 		gap: var(--space-12)
 		@media screen and (max-width: $bp-lg)
 			grid-template-columns: 1fr
+
 		// Products
 		&__products
 
@@ -12,7 +13,7 @@
 		&__head
 			padding-bottom: var(--space-1)
 			display: grid
-			grid-template-columns: 3fr 1fr 1fr
+			grid-template-columns: 2fr 1fr
 			border-bottom: 1px solid rgba(255, 255, 255, .1)
 		&__title
 			text-align: center
@@ -21,18 +22,36 @@
 				text-align: left
 			&:last-child
 				text-align: right
+			&_divider
+				@media screen and (max-width: $bp-sm)
+					&::before
+						content: "/"
+			&-wrap
+				display: flex
+				justify-content: space-between
+				@media screen and (max-width: $bp-sm)
+					justify-content: flex-end
 		&__list
 			margin-top: var(--space-8)
+
 		// Product
 		&__product
 			margin-top: var(--space-6)
 			display: grid
-			grid-template-columns: 3fr 1fr 1fr
+			grid-template-columns: 2fr 1fr
 			align-items: center
 			&:first-of-type
 				margin-top: 0
 		&__group
 			display: flex
+			&-wrap
+				display: flex
+				justify-content: space-between
+				align-items: baseline
+				@media screen and (max-width: $bp-sm)
+					flex-direction: column
+					align-items: flex-end
+					gap: var(--space-3)
 		&__image
 			margin-right: var(--space-3)
 			height: 72px
@@ -44,8 +63,8 @@
 			align-items: center
 			justify-content: center
 			@media screen and (max-width: $bp-sm)
-				height: 60px
-				width: 60px
+				height: 50px
+				width: 50px
 		&__img
 			display: flex
 			object-fit: cover
