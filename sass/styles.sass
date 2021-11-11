@@ -151,14 +151,15 @@
 			justify-content: center
 			align-items: center
 			cursor: pointer
-			transition: .3s
+			transition: .2s ease-in-out
 			&:hover
-				color: var(--hover-link-color)
+				background-color: var(--primary-color)
+				color: var(--text-color-inverse)
 		&_selected
-			background-color: white
-			color: #333
+			background-color: var(--primary-color)
+			color: var(--text-color-inverse)
 			position: relative
-			font-weight: var(--font-medium)
+			font-weight: var(--font-semi-bold)
 			cursor: default
 			&:hover
 				color: initial

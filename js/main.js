@@ -31,27 +31,41 @@ document.addEventListener("DOMContentLoaded", function () {
   const scrollUp = document.querySelector(".scroll_up");
 
   function headerScroll() {
-    if (!header) return;
+    // Scroll-Up Button -> On scoll -> Toggle Scroll-Up Button visibility when more or less then 400 view height points
+    if (scrollUp) this.scrollY >= 400 ? scrollUp.classList.remove("scroll_hidden") : scrollUp.classList.add("scroll_hidden");
 
-    if (this.scrollY >= 50) {
-      header.classList.add("header_scroll");
+    // if (!header) return;
 
-      this.scrollY > prevY
-        ? header.classList.add("header_hide")
-        : header.classList.remove("header_hide");
-    } else {
-      header.classList.remove("header_hide");
+    if (this.scrollY >= 90) {
+      if (prevY === undefined) {
+        prevY = this.scrollY;
+        return;
+      }
+
+      // If current coordinates more then previous saved -> Hide Header
+      if (this.scrollY > prevY) {
+        header.classList.add("header_hide");
+      } else {
+        header.classList.add("header_scroll");
+        header.classList.remove("header_hide");
+      }
+    } 
+    
+    // If less then 90 view height point -> Remove Position Fixed (in class)
+    if (this.scrollY <= 90) {
+      if (prevY === undefined) {
+        prevY = this.scrollY;
+        return;
+      }
+
       header.classList.remove("header_scroll");
     }
 
+    // Saving last coordinates
     prevY = this.scrollY;
-
-    // Scroll Arrow
-    if (!scrollUp) return;
-    this.scrollY >= 400 ? scrollUp.classList.remove("scroll_hidden") : scrollUp.classList.add("scroll_hidden");
   }
 
-  headerScroll = throttle(headerScroll, 120);
+  headerScroll = throttle(headerScroll, 200);
   window.addEventListener("scroll", headerScroll);
 
 
@@ -117,9 +131,6 @@ document.addEventListener("DOMContentLoaded", function () {
   // Animation -> Reveal -> Init
   const scrollReveal = ScrollReveal({
     distance: '120px',
-    viewOffset: {
-      bottom: 100
-    },
     origin: 'top',
     delay: 100,
     duration: 1400,
@@ -129,10 +140,10 @@ document.addEventListener("DOMContentLoaded", function () {
   scrollReveal.reveal(`.sr-home_left`, {origin: 'left'});
   scrollReveal.reveal(`.sr_left`, {origin: 'left', mobile: false});
   scrollReveal.reveal(`.sr-title_left`, {origin: 'left', mobile: false});
-  scrollReveal.reveal(`.footer__socials`, {origin: 'left', delay: 1400, mobile: false});
+  scrollReveal.reveal(`.footer__socials`, {origin: 'left', delay: 800, mobile: false});
   scrollReveal.reveal(`.sr_right`, {origin: 'right', mobile: false});
   scrollReveal.reveal(`.shipping__container`, {origin: 'right', mobile: false});
-  scrollReveal.reveal(`.contacts__socials, .footer__container`, {origin: 'right', delay: 1000, mobile: false});
+  scrollReveal.reveal(`.contacts__socials, .footer__container`, {origin: 'right', delay: 600, mobile: false});
   scrollReveal.reveal(`.shop__item`, {origin: 'bottom', interval: 250, mobile: false});
   scrollReveal.reveal(`.sr_bottom`, {origin: 'bottom', mobile: false});
   scrollReveal.reveal(`.contacts__form`, {origin: 'bottom', delay: 600, mobile: false});

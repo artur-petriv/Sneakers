@@ -1985,20 +1985,21 @@ button {
       -ms-flex-align: center;
           align-items: center;
   cursor: pointer;
-  -webkit-transition: .3s;
-  -o-transition: .3s;
-  transition: .3s;
+  -webkit-transition: .2s ease-in-out;
+  -o-transition: .2s ease-in-out;
+  transition: .2s ease-in-out;
 }
 
 .product__option-size:hover {
-  color: var(--hover-link-color);
+  background-color: var(--primary-color);
+  color: var(--text-color-inverse);
 }
 
 .product__option_selected {
-  background-color: white;
-  color: #333;
+  background-color: var(--primary-color);
+  color: var(--text-color-inverse);
   position: relative;
-  font-weight: var(--font-medium);
+  font-weight: var(--font-semi-bold);
   cursor: default;
 }
 
