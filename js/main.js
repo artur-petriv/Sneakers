@@ -34,9 +34,8 @@ document.addEventListener("DOMContentLoaded", function () {
     // Scroll-Up Button -> On scoll -> Toggle Scroll-Up Button visibility when more or less then 400 view height points
     if (scrollUp) this.scrollY >= 400 ? scrollUp.classList.remove("scroll_hidden") : scrollUp.classList.add("scroll_hidden");
 
-    // if (!header) return;
-
-    if (this.scrollY >= 90) {
+    // Header
+    if (header && this.scrollY >= 90) {
       if (prevY === undefined) {
         prevY = this.scrollY;
         return;
@@ -52,7 +51,7 @@ document.addEventListener("DOMContentLoaded", function () {
     } 
     
     // If less then 90 view height point -> Remove Position Fixed (in class)
-    if (this.scrollY <= 90) {
+    if (header && this.scrollY <= 90) {
       if (prevY === undefined) {
         prevY = this.scrollY;
         return;
